@@ -1,0 +1,14 @@
+﻿Build started 30.03.2015 14:00:24.
+     1>Project "C:\Users\hp9\workspace\untitled\RML\Source\MorphWizardLib\MorphWizardLib.vcxproj" on node 2 (Build target(s)).
+       Project file contains ToolsVersion="12.0". This toolset may be unknown or missing, in which case you may be able to resolve this by installing the appropriate version of MSBuild, or the build may have been forced to a particular ToolsVersion for policy reasons. Treating the project as if it had ToolsVersion="4.0". For more information, please see http://go.microsoft.com/fwlink/?LinkId=291333.
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I..\..\..\PCRE /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _LIB /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt wizard.cpp
+         wizard.cpp
+       Lib:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\Lib.exe /OUT:"Debug\MorphWizardLib.lib" /NOLOGO Debug\wizard.obj
+         MorphWizardLib.vcxproj -> C:\Users\hp9\workspace\untitled\RML\Source\MorphWizardLib\Debug\MorphWizardLib.lib
+     1>Done Building Project "C:\Users\hp9\workspace\untitled\RML\Source\MorphWizardLib\MorphWizardLib.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:07.52

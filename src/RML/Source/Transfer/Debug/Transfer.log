@@ -1,0 +1,77 @@
+﻿Построение начато 31.10.2014 22:45:37.
+     1>Проект "C:\RML\Source\Transfer\Transfer.vcxproj" в узле 2 (целевые объекты rebuild).
+       Файл проекта содержит ToolsVersion="12.0". Возможно, этот набор инструментов неизвестен или отсутствует (в этом случае проблему можно устранить, установив подходящую версию MSBuild), либо для данной сборки определено конкретное значение ToolsVersion в параметрах политики. Проект обрабатывается как имеющий ToolsVersion="4.0". Дополнительные сведения см. по ссылке http://go.microsoft.com/fwlink/?LinkId=291333.
+     1>InitializeBuildStatus:
+         Создание ".\Debug\Transfer.unsuccessfulbuild", так как было задано "AlwaysCreate".
+       ClCompile:
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _VC80_UPGRADE=0x0710 /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yc"stdafx.h" /Fp".\Debug/Transfer.pch" /Fo".\Debug/" /Fd".\Debug/vc100.pdb" /Gd /TP /analyze- /errorReport:prompt StdAfx.cpp /Zc:forScope 
+         StdAfx.cpp
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _VC80_UPGRADE=0x0710 /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp".\Debug/Transfer.pch" /Fo".\Debug/" /Fd".\Debug/vc100.pdb" /Gd /TP /analyze- /errorReport:prompt EngAdverbs.cpp EngAlg_1.cpp EngAlg_2.cpp EngAlg_3.cpp EngAlg_4.cpp EngAlg_5.cpp EngArticle.cpp EngAtomic.cpp EngBinaryTranslate.cpp EngEquivs.cpp EngHelper.cpp EngInterp.cpp EngNodeCreate.cpp EngPrimitives.cpp EngTerminTranslate.cpp EngTimeNodeTranslate.cpp TranseClause.cpp TranslateToEnglish.cpp TransPrepNoun.cpp TransRels.cpp TransRules.cpp TransTense.cpp EngNoun.cpp EngPrep.cpp EngSynthes.cpp EngVerbTense.cpp NodeHelper.cpp /Zc:forScope 
+         EngAdverbs.cpp
+         EngAlg_1.cpp
+         EngAlg_2.cpp
+         EngAlg_3.cpp
+         EngAlg_4.cpp
+         EngAlg_5.cpp
+         EngArticle.cpp
+         EngAtomic.cpp
+         EngBinaryTranslate.cpp
+         EngEquivs.cpp
+         EngHelper.cpp
+         EngInterp.cpp
+         EngNodeCreate.cpp
+         EngPrimitives.cpp
+         EngTerminTranslate.cpp
+         EngTimeNodeTranslate.cpp
+         TranseClause.cpp
+         TranslateToEnglish.cpp
+         TransPrepNoun.cpp
+         TransRels.cpp
+         Создание кода...
+         Компиляция...
+         TransRules.cpp
+         TransTense.cpp
+         EngNoun.cpp
+         EngPrep.cpp
+         EngSynthes.cpp
+         EngVerbTense.cpp
+         NodeHelper.cpp
+         Создание кода...
+       Lib:
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\Lib.exe /OUT:".\Debug\Transfer.lib" /NOLOGO .\Debug/StdAfx.obj
+         .\Debug/EngAdverbs.obj
+         .\Debug/EngAlg_1.obj
+         .\Debug/EngAlg_2.obj
+         .\Debug/EngAlg_3.obj
+         .\Debug/EngAlg_4.obj
+         .\Debug/EngAlg_5.obj
+         .\Debug/EngArticle.obj
+         .\Debug/EngAtomic.obj
+         .\Debug/EngBinaryTranslate.obj
+         .\Debug/EngEquivs.obj
+         .\Debug/EngHelper.obj
+         .\Debug/EngInterp.obj
+         .\Debug/EngNodeCreate.obj
+         .\Debug/EngPrimitives.obj
+         .\Debug/EngTerminTranslate.obj
+         .\Debug/EngTimeNodeTranslate.obj
+         .\Debug/TranseClause.obj
+         .\Debug/TranslateToEnglish.obj
+         .\Debug/TransPrepNoun.obj
+         .\Debug/TransRels.obj
+         .\Debug/TransRules.obj
+         .\Debug/TransTense.obj
+         .\Debug/EngNoun.obj
+         .\Debug/EngPrep.obj
+         .\Debug/EngSynthes.obj
+         .\Debug/EngVerbTense.obj
+         .\Debug/NodeHelper.obj
+         Transfer.vcxproj -> C:\RML\Source\Transfer\.\Debug\Transfer.lib
+       FinalizeBuildStatus:
+         Файл ".\Debug\Transfer.unsuccessfulbuild" удаляется.
+         Обращение к ".\Debug\Transfer.lastbuildstate".
+     1>Построение проекта "C:\RML\Source\Transfer\Transfer.vcxproj" завершено (целевые объекты rebuild).
+
+Построение успешно завершено.
+
+Затраченное время: 00:00:19.26

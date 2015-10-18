@@ -1,0 +1,56 @@
+﻿Построение начато 31.10.2014 22:36:21.
+     1>Проект "C:\RML\Source\graphan\graphan.vcxproj" в узле 2 (целевые объекты rebuild).
+       Файл проекта содержит ToolsVersion="12.0". Возможно, этот набор инструментов неизвестен или отсутствует (в этом случае проблему можно устранить, установив подходящую версию MSBuild), либо для данной сборки определено конкретное значение ToolsVersion в параметрах политики. Проект обрабатывается как имеющий ToolsVersion="4.0". Дополнительные сведения см. по ссылке http://go.microsoft.com/fwlink/?LinkId=291333.
+     1>Проект "C:\RML\Source\graphan\graphan.vcxproj" (1) выполняет построение "C:\RML\Source\StructDictLib\StructDictLib.vcxproj" (2) в узле 1 (целевые объекты GetTargetPath).
+       Файл проекта содержит ToolsVersion="12.0". Возможно, этот набор инструментов неизвестен или отсутствует (в этом случае проблему можно устранить, установив подходящую версию MSBuild), либо для данной сборки определено конкретное значение ToolsVersion в параметрах политики. Проект обрабатывается как имеющий ToolsVersion="4.0". Дополнительные сведения см. по ссылке http://go.microsoft.com/fwlink/?LinkId=291333.
+     2>Построение проекта "C:\RML\Source\StructDictLib\StructDictLib.vcxproj" завершено (целевые объекты GetTargetPath).
+     1>Проект "C:\RML\Source\graphan\graphan.vcxproj" (1) выполняет построение "C:\RML\Source\GraphanLib\GraphanLib.vcxproj" (3) в узле 2 (целевые объекты GetTargetPath).
+       Файл проекта содержит ToolsVersion="12.0". Возможно, этот набор инструментов неизвестен или отсутствует (в этом случае проблему можно устранить, установив подходящую версию MSBuild), либо для данной сборки определено конкретное значение ToolsVersion в параметрах политики. Проект обрабатывается как имеющий ToolsVersion="4.0". Дополнительные сведения см. по ссылке http://go.microsoft.com/fwlink/?LinkId=291333.
+     3>Построение проекта "C:\RML\Source\GraphanLib\GraphanLib.vcxproj" завершено (целевые объекты GetTargetPath).
+     1>Проект "C:\RML\Source\graphan\graphan.vcxproj" (1) выполняет построение "C:\RML\Source\StructDictLib\StructDictLib.vcxproj" (2:2) в узле 1 (целевые объекты GetNativeManifest).
+       Файл проекта содержит ToolsVersion="12.0". Возможно, этот набор инструментов неизвестен или отсутствует (в этом случае проблему можно устранить, установив подходящую версию MSBuild), либо для данной сборки определено конкретное значение ToolsVersion в параметрах политики. Проект обрабатывается как имеющий ToolsVersion="4.0". Дополнительные сведения см. по ссылке http://go.microsoft.com/fwlink/?LinkId=291333.
+     2>Построение проекта "C:\RML\Source\StructDictLib\StructDictLib.vcxproj" завершено (целевые объекты GetNativeManifest).
+     1>Проект "C:\RML\Source\graphan\graphan.vcxproj" (1) выполняет построение "C:\RML\Source\GraphanLib\GraphanLib.vcxproj" (3:2) в узле 2 (целевые объекты GetNativeManifest).
+       Файл проекта содержит ToolsVersion="12.0". Возможно, этот набор инструментов неизвестен или отсутствует (в этом случае проблему можно устранить, установив подходящую версию MSBuild), либо для данной сборки определено конкретное значение ToolsVersion в параметрах политики. Проект обрабатывается как имеющий ToolsVersion="4.0". Дополнительные сведения см. по ссылке http://go.microsoft.com/fwlink/?LinkId=291333.
+     3>Построение проекта "C:\RML\Source\GraphanLib\GraphanLib.vcxproj" завершено (целевые объекты GetNativeManifest).
+     1>InitializeBuildStatus:
+         Создание "Debug\graphan.unsuccessfulbuild", так как было задано "AlwaysCreate".
+       Midl:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\midl.exe /W1 /nologo /char signed /env win32 /Oicf /h "graphan.h" /iid "graphan_i.c" /tlb ".\graphan.tlb" graphan.idl 
+         Processing .\graphan.idl
+         graphan.idl
+         Processing C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\include\oaidl.idl
+         oaidl.idl
+         Processing C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\include\objidl.idl
+         objidl.idl
+         Processing C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\include\unknwn.idl
+         unknwn.idl
+         Processing C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\include\wtypes.idl
+         wtypes.idl
+         Processing C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\include\basetsd.h
+         basetsd.h
+         Processing C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\include\guiddef.h
+         guiddef.h
+         Processing C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\include\ocidl.idl
+         ocidl.idl
+         Processing C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\include\oleidl.idl
+         oleidl.idl
+         Processing C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\include\servprov.idl
+         servprov.idl
+         Processing C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\include\urlmon.idl
+         urlmon.idl
+         Processing C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\include\msxml.idl
+         msxml.idl
+         Processing C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\include\oaidl.acf
+         oaidl.acf
+         Processing C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\include\ocidl.acf
+         ocidl.acf
+       ClCompile:
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _VC80_UPGRADE=0x0710 /D _WINDLL /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yc"StdPch.h" /Fp".\Debug/graphan.pch" /Fo".\Debug/" /Fd".\Debug/vc100.pdb" /Gd /TP /analyze- /errorReport:prompt StdPch.cpp
+         StdPch.cpp
+     1>c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\atlmfc\include\atlcore.h(35): fatal error C1189: #error :  This file requires _WIN32_WINNT to be #defined at least to 0x0403. Value 0x0501 or higher is recommended.
+     1>Построение проекта "C:\RML\Source\graphan\graphan.vcxproj" завершено (целевые объекты rebuild) с ошибкой.
+
+СБОЙ построения.
+
+Затраченное время: 00:00:02.53

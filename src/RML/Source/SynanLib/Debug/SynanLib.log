@@ -1,0 +1,94 @@
+﻿Build started 30.03.2015 14:14:41.
+     1>Project "C:\Users\hp9\workspace\untitled\RML\Source\SynanLib\SynanLib.vcxproj" on node 2 (Build target(s)).
+       Project file contains ToolsVersion="12.0". This toolset may be unknown or missing, in which case you may be able to resolve this by installing the appropriate version of MSBuild, or the build may have been forced to a particular ToolsVersion for policy reasons. Treating the project as if it had ToolsVersion="4.0". For more information, please see http://go.microsoft.com/fwlink/?LinkId=291333.
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _LIB /D _VC80_UPGRADE=0x0710 /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yc"StdSynan.h" /Fp".\Debug/SynanLib.pch" /Fo".\Debug/" /Fd".\Debug/vc110.pdb" /Gd /TP /analyze- /errorReport:prompt StdSynan.cpp
+         StdSynan.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _LIB /D _VC80_UPGRADE=0x0710 /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdSynan.h" /Fp".\Debug/SynanLib.pch" /Fo".\Debug/" /Fd".\Debug/vc110.pdb" /Gd /TP /analyze- /errorReport:prompt AnalyticalForms.cpp BaseRules.cpp FragCoord.cpp FragDisrupt.cpp FragPustycha.cpp HomonymsKiller.cpp NSO.CPP Participles.cpp RuleForSimilarNounGroupClauses.cpp RusBuildInitialClauses.cpp RusClause.cpp RusFormatCaller.cpp RusGroup.cpp RusOborot.cpp RusParenthesis.cpp RusSentence.cpp RusSyntaxOpt.cpp RusThesaurus.cpp RusWord.cpp SynanDash.cpp SynSubjPred.cpp Adverbs.cpp foreign_term.cpp gen_chains.cpp Gleiche.cpp Names.cpp noun_adjunct_group.cpp Numbers.cpp prepositions.cpp Selective.cpp similar_adjs.cpp similar_advs.cpp similar_common.cpp similar_infs.cpp similar_noun_groups.cpp Verbs.cpp similar_numerals.cpp
+         AnalyticalForms.cpp
+         BaseRules.cpp
+         FragCoord.cpp
+         FragDisrupt.cpp
+         FragPustycha.cpp
+         HomonymsKiller.cpp
+         NSO.CPP
+         Participles.cpp
+         RuleForSimilarNounGroupClauses.cpp
+         RusBuildInitialClauses.cpp
+         RusClause.cpp
+         RusFormatCaller.cpp
+         RusGroup.cpp
+         RusOborot.cpp
+         RusParenthesis.cpp
+         RusSentence.cpp
+         RusSyntaxOpt.cpp
+         RusThesaurus.cpp
+         RusWord.cpp
+         SynanDash.cpp
+         Generating Code...
+         Compiling...
+         SynSubjPred.cpp
+         Adverbs.cpp
+         foreign_term.cpp
+         gen_chains.cpp
+         Gleiche.cpp
+     1>c:\users\hp9\workspace\untitled\rml\source\synanlib\gleiche.cpp(212): warning C4101: 'dummy' : unreferenced local variable
+         Names.cpp
+         noun_adjunct_group.cpp
+         Numbers.cpp
+         prepositions.cpp
+         Selective.cpp
+         similar_adjs.cpp
+         similar_advs.cpp
+         similar_common.cpp
+         similar_infs.cpp
+         similar_noun_groups.cpp
+         Verbs.cpp
+         similar_numerals.cpp
+         Generating Code...
+       Lib:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\Lib.exe /OUT:".\Debug\SynanLib.lib" /NOLOGO .\Debug/AnalyticalForms.obj
+         .\Debug/BaseRules.obj
+         .\Debug/FragCoord.obj
+         .\Debug/FragDisrupt.obj
+         .\Debug/FragPustycha.obj
+         .\Debug/HomonymsKiller.obj
+         .\Debug/NSO.obj
+         .\Debug/Participles.obj
+         .\Debug/RuleForSimilarNounGroupClauses.obj
+         .\Debug/RusBuildInitialClauses.obj
+         .\Debug/RusClause.obj
+         .\Debug/RusFormatCaller.obj
+         .\Debug/RusGroup.obj
+         .\Debug/RusOborot.obj
+         .\Debug/RusParenthesis.obj
+         .\Debug/RusSentence.obj
+         .\Debug/RusSyntaxOpt.obj
+         .\Debug/RusThesaurus.obj
+         .\Debug/RusWord.obj
+         .\Debug/StdSynan.obj
+         .\Debug/SynanDash.obj
+         .\Debug/SynSubjPred.obj
+         .\Debug/Adverbs.obj
+         .\Debug/foreign_term.obj
+         .\Debug/gen_chains.obj
+         .\Debug/Gleiche.obj
+         .\Debug/Names.obj
+         .\Debug/noun_adjunct_group.obj
+         .\Debug/Numbers.obj
+         .\Debug/prepositions.obj
+         .\Debug/Selective.obj
+         .\Debug/similar_adjs.obj
+         .\Debug/similar_advs.obj
+         .\Debug/similar_common.obj
+         .\Debug/similar_infs.obj
+         .\Debug/similar_noun_groups.obj
+         .\Debug/Verbs.obj
+         .\Debug/similar_numerals.obj
+     1>RusGroup.obj : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+         SynanLib.vcxproj -> C:\Users\hp9\workspace\untitled\RML\Source\SynanLib\Debug\SynanLib.lib
+     1>Done Building Project "C:\Users\hp9\workspace\untitled\RML\Source\SynanLib\SynanLib.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:36.19

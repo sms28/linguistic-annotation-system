@@ -1,0 +1,23 @@
+﻿Build started 30.03.2015 13:55:19.
+     1>Project "C:\Users\hp9\workspace\untitled\RML\Source\AgramtabLib\AgramtabLib.vcxproj" on node 2 (Build target(s)).
+       Project file contains ToolsVersion="12.0". This toolset may be unknown or missing, in which case you may be able to resolve this by installing the appropriate version of MSBuild, or the build may have been forced to a particular ToolsVersion for policy reasons. Treating the project as if it had ToolsVersion="4.0". For more information, please see http://go.microsoft.com/fwlink/?LinkId=291333.
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _LIB /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt agramtab_.cpp EngGramTab.cpp GerGramTab.cpp RusGramTab.cpp StdGramtab.cpp
+         StdGramtab.cpp
+         RusGramTab.cpp
+         GerGramTab.cpp
+         EngGramTab.cpp
+         agramtab_.cpp
+         Generating Code...
+       Lib:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\Lib.exe /OUT:"Debug\AgramtabLib.lib" /NOLOGO Debug\agramtab_.obj
+         Debug\EngGramTab.obj
+         Debug\GerGramTab.obj
+         Debug\RusGramTab.obj
+         Debug\StdGramtab.obj
+         AgramtabLib.vcxproj -> C:\Users\hp9\workspace\untitled\RML\Source\AgramtabLib\Debug\AgramtabLib.lib
+     1>Done Building Project "C:\Users\hp9\workspace\untitled\RML\Source\AgramtabLib\AgramtabLib.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:13.72
