@@ -8,7 +8,7 @@ public class Token {
     private String lemma;
     private String begin;
     private String length;
-//    private List<String> descriptors;
+    private String[] descriptors;
 
     public String getBegin() {
         return begin;
@@ -25,14 +25,14 @@ public class Token {
     public void setLength(String length) {
         this.length = length;
     }
-//
-//    public List<String> getDescriptors() {
-//        return descriptors;
-//    }
-//
-//    public void setDescriptors(List<String> descriptors) {
-//        this.descriptors = descriptors;
-//    }
+
+    public String[] getDescriptors() {
+        return descriptors;
+    }
+
+    public void setDescriptors(String[] descriptors) {
+        this.descriptors = descriptors.clone();
+    }
 
     public String getLemma() {
         return lemma;

@@ -1,2 +1,8 @@
                                 0 0 BEG DOC
-паволыврвы                      0 10 RLE aa CS? SENT_END
+Маша                            0 4 RLE Aa NAM?
+и                               5 1 RLE aa EXPR1 EXPR2 EXPR_NO225
+Денис                           7 5 RLE Aa NAM?
+смеются                         13 7 RLE aa
+и                               21 1 RLE aa EXPR1 EXPR2 EXPR_NO225
+едят                            23 4 RLE aa
+кашу                            28 4 RLE aa CS? SENT_END

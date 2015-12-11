@@ -4,13 +4,13 @@ package las.model;
 import java.util.List;
 
 public class TokenList {
-    private List<Token> tokens;
+    private Token[] tokens;
 
-    public List<Token> getTokens() {
+    public Token[] getTokens() {
         return tokens;
     }
 
-    public void setTokens(List<Token> tokens) {
-        this.tokens = tokens;
+    public void setTokens(Token[] tokens) {
+        this.tokens = tokens.clone();
     }
 }
