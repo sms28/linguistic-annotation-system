@@ -242,20 +242,45 @@ table {
 .navigation__button {
   height: 100%;
   border: none;
-  background-color: rgba(0, 0, 0, 0);
+  outline: none;
   width: 150px;
   font-family: 'Righteous', sans-serif;
   font-size: 20px;
   color: #ffffff;
 }
-.navigation__button:hover {
-  color: #fffa06;
+.navigation__button + .navigation__button {
+  margin-left: 15px;
 }
 .navigation__button:active {
-  background-color: rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 0 10px 1px rgba(0, 0, 0, 0.2);
+}
+.navigation__button_purple {
+  background-color: #c86fff;
+}
+.navigation__button_purple:hover {
+  background-color: #ad60dc;
+}
+.navigation__button_pink {
+  background-color: #ff67b3;
+}
+.navigation__button_pink:hover {
+  background-color: #e55ca1;
 }
 .processing-page {
-  background-color: #fff8cc;
+  background-color: #E9FDFF;
+}
+.processing-page__link {
+  display: none;
+  margin-left: 25px;
+  font-family: 'Righteous', sans-serif;
+  font-size: 20px;
+  color: #fffa12;
+  text-decoration: none;
+  border-bottom: 3px dashed #fffa12;
+}
+.processing-page__link:active {
+  color: #ecdc59;
+  border-bottom: 3px dashed #ecdc59;
 }
 .university-title {
   padding: 110px 0;

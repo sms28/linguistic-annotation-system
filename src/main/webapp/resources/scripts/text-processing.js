@@ -10,4 +10,15 @@ $(function() {
             $(event.currentTarget).closest('.token').removeClass('descriptors-hidden');
         }
     });
+
+
+    $('.processing-page__button-index').on('click', function() {
+
+        var result = confirm("Вы действительно хотите покинуть страницу без сохранения?");
+
+        if (result) {
+            document.location.href = "/";
+        }
+
+    });
 });

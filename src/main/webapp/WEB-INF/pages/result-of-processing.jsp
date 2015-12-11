@@ -13,9 +13,13 @@
 <div class="processing-page">
 
     <div class="navigation">
-        <button class="navigation__button processing-page__button-save">
+        <button class="navigation__button processing-page__button-save navigation__button_purple">
             Сохранить
         </button>
+        <button class="navigation__button processing-page__button-index navigation__button_pink">
+            На главную
+        </button>
+        <a id="download-link" href="/download" class="processing-page__link">Cкачать файл</a>
     </div>
 
     <div class="descriptors">
@@ -63,9 +67,6 @@
             </tbody>
         </table>
     </div>
-
-
-    <a href="/download">meow</a>
 
 </div>
 </body>

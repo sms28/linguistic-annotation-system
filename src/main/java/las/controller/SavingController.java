@@ -13,7 +13,7 @@ public class SavingController {
     @RequestMapping(value = "/result-save.html")
     public String resultSave(@RequestBody TokenList tokens) {
 
-        System.out.println(tokens.getTokens().length);
+        System.out.println(tokens.getTokens()[0].getLemma());
         return "";
     }
 }
