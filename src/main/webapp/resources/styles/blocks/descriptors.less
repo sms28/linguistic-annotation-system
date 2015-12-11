@@ -1,0 +1,78 @@
+.descriptors {
+    padding: 70px 0 50px 50px;
+    height: 100%;
+
+    & table {
+        text-align: left;
+        font-family: "Helvetica Neue Light", "Lucida Grande", "Calibri", "Arial", sans-serif;
+    }
+
+    & thead tr {
+        height: 32px;
+        line-height: 17px;
+        vertical-align: middle;
+        color: rgba(255, 255, 255, 0.9);
+        background-color: rgb(8, 23, 125);
+        font-weight: 600;
+        font-size: 14px;
+    }
+
+    & tbody tr {
+        position: relative;
+        height: 32px;
+        vertical-align: middle;
+        line-height: 32px;
+        background-color: rgb(187, 255, 162);
+    }
+
+    & td {
+        padding: 0 20px;
+
+        &:nth-child(2n) {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+    }
+
+    & th {
+        padding: 7px 20px;
+        min-width: 100px;
+
+        &:nth-child(4) {
+            width: 100%;
+        }
+
+        &:nth-child(2n) {
+            background-color: rgba(255,255,255,0.1);
+        }
+    }
+
+    &-hidden.token {
+        background-color: rgb(172, 216, 236);
+
+        &:nth-child(2n) {
+            background-color: #A8CCF1;
+        }
+    }
+
+    &-hidden &-list {
+        display: none;
+    }
+
+    &-list {
+        position: absolute;
+
+        &__content {
+            position: absolute;
+            top: -15px;
+            left: -600px;
+            background-color: rgb(187, 255, 162);
+            padding: 20px;
+            border: 1px solid #78ca61;
+            border-radius: 3px;
+
+            & input[type=checkbox] {
+                vertical-align: middle;
+            }
+        }
+    }
+}
