@@ -19,23 +19,37 @@ public class DownloadController {
     public String download(HttpServletResponse response, HttpServletRequest request) throws IOException {
 
         response.setContentType("text/plain");
-        response.setHeader("Content-Disposition", "attachment;filename=text.txt");
+        response.setHeader("Content-Disposition", "attachment;filename=text.xml");
 
         try {
-            ServletOutputStream servletOut;
-            FileInputStream fin = new FileInputStream(
-                    request.getSession().getServletContext().getRealPath("") + "\\resources\\results\\result.txt");
-            response.setContentLength(fin.available());
-             servletOut = response.getOutputStream();
+            File file = new File(
+                    "C:\\Users\\hp9\\IdeaProjects\\LinguisticAnnotationSystem\\src\\main\\webapp\\resources\\results\\mystem-output.xml");
+            FileInputStream fileIn = new FileInputStream(file);
+            ServletOutputStream out = response.getOutputStream();
 
-            int i;
-            while ((i = fin.read()) != -1){
-
-                servletOut.write(i);
-
+            byte[] outputByte = new byte[4096];
+            Integer length = fileIn.read(outputByte, 0, 4096);
+            while(length != -1) {
+                out.write(outputByte, 0, length);
+                length = fileIn.read(outputByte, 0, 4096);
             }
-            servletOut.close();
-
+            fileIn.close();
+            out.flush();
+            out.close();
+//            ServletOutputStream servletOut;
+//            FileInputStream fin = new FileInputStream(
+//                    request.getSession().getServletContext().getRealPath("") + "\\resources\\results\\mystem-output.xml");
+//            response.setContentLength(fin.available());
+//             servletOut = response.getOutputStream();
+//
+//            int i;
+//            while ((i = fin.read()) != -1){
+//
+//                servletOut.write(i);
+//
+//            }
+//            servletOut.close();
+//
         } catch(Exception e) {
             System.out.println(e.getMessage());
         }

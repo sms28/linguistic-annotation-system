@@ -185,7 +185,7 @@ table {
   padding: 7px 20px;
   min-width: 100px;
 }
-.descriptors th:nth-child(4) {
+.descriptors th:last-child {
   width: 100%;
 }
 .descriptors th:nth-child(2n) {
@@ -206,7 +206,7 @@ table {
 .descriptors-list__content {
   position: absolute;
   top: -15px;
-  left: -600px;
+  left: -800px;
   background-color: #bbffa2;
   padding: 20px;
   border: 1px solid #78ca61;

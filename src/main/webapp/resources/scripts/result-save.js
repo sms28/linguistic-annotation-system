@@ -1,10 +1,7 @@
 //Сохранение файла на компьютер пользователя
 $(function() {
-    $('.processing-page__button-save').on('click', function() {
 
-
-        //Создание JSON-объекта с данными
-
+    function GrafAnRetrieve() {
         var text = {
             tokens: []
         };
@@ -23,6 +20,36 @@ $(function() {
             text.tokens.push(token);
         });
 
+        return text;
+    }
+
+    function MystemRetrieve() {
+        var text = {
+            tokens: []
+        };
+
+        $('.token').each(function() {
+            var token = {};
+            token.lemma = $(this).find('.lemma').text();
+            token.descriptors = [];
+            $(this).find('.descriptors-list__content').find(':not(:checked)').each(
+                function() {
+                    token.descriptors.push($(this).attr("prop"));
+                }
+            );
+            text.tokens.push(token);
+        });
+
+        return text;
+    }
+
+
+    $('.processing-page__button-save').on('click', function() {
+
+
+        //Создание JSON-объекта с данными
+
+        var text = MystemRetrieve();
 
         //Передача данных на сервер
 

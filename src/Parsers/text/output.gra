@@ -1,0 +1,6 @@
+                                0 0 BEG DOC
+Мама                            0 4 RLE Aa NAM?
+любит                           5 5 RLE aa
+1                               11 1 DC
+раму                            13 4 RLE aa
+.                               17 1 PUN CS? SENT_END

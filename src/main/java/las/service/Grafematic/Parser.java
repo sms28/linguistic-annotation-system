@@ -15,7 +15,7 @@ public class Parser {
     private void startGrafematicAnalyzer() {
         try {
             String line;
-            Process p = Runtime.getRuntime().exec("C:\\Users\\hp9\\IdeaProjects\\LinguisticAnnotationSystem\\src\\RML\\Test\\GraphAn\\GraphAn\\Debug\\GraphAn.exe");
+            Process p = Runtime.getRuntime().exec("C:\\Users\\hp9\\IdeaProjects\\LinguisticAnnotationSystem\\src\\Parsers\\GraphAn.exe");
             p.waitFor();
             BufferedReader bri = new BufferedReader(new InputStreamReader(p.getInputStream()));
             BufferedReader bre = new BufferedReader(new InputStreamReader(p.getErrorStream()));
@@ -36,7 +36,7 @@ public class Parser {
 
     private void writeToFile(String input) throws FileNotFoundException{
         PrintWriter inputFile = new PrintWriter
-                ("C:\\Users\\hp9\\IdeaProjects\\LinguisticAnnotationSystem\\text\\input.txt");
+                ("C:\\Users\\hp9\\IdeaProjects\\LinguisticAnnotationSystem\\src\\Parsers\\text\\input.txt");
         inputFile.print(input);
         inputFile.close();
     }
@@ -48,7 +48,7 @@ public class Parser {
                 writeToFile(input);
                 startGrafematicAnalyzer();
                 Scanner outputFile = new Scanner(Paths.get
-                        ("C:\\Users\\hp9\\IdeaProjects\\LinguisticAnnotationSystem\\text\\output.gra"));
+                        ("C:\\Users\\hp9\\IdeaProjects\\LinguisticAnnotationSystem\\src\\Parsers\\text\\output.gra"));
                 result = handle(outputFile);
             } catch (Exception e) {
                 System.out.println(e.getMessage());

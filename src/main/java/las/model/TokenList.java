@@ -4,7 +4,7 @@ package las.model;
 import java.util.List;
 
 public class TokenList {
-    private Token[] tokens;
+    public Token[] tokens;
 
     public Token[] getTokens() {
         return tokens;

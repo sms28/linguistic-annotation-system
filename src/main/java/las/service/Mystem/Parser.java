@@ -1,0 +1,123 @@
+package las.service.Mystem;
+
+import org.apache.xmlbeans.XmlCursor;
+import org.apache.xmlbeans.XmlException;
+import org.apache.xmlbeans.XmlObject;
+
+import javax.xml.namespace.QName;
+import java.io.*;
+import java.lang.reflect.Array;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Parser {
+
+    public Parser() {}
+
+    private void startMystemAnalyzer() {
+        try {
+            ProcessBuilder procBuilder = new ProcessBuilder("C:\\Users\\hp9\\IdeaProjects\\LinguisticAnnotationSystem\\src\\Parsers\\mystem.exe",
+                    "-ni", "--format", "xml", "--eng-gr",
+                    "C:\\Users\\hp9\\IdeaProjects\\LinguisticAnnotationSystem\\src\\Parsers\\text\\mystem-input.txt",
+                    "C:\\Users\\hp9\\IdeaProjects\\LinguisticAnnotationSystem\\src\\main\\webapp\\resources\\results\\mystem-output.xml");
+            procBuilder.redirectErrorStream(true);
+
+            Process process = procBuilder.start();
+            InputStream stdout = process.getInputStream();
+            InputStreamReader isrStdout = new InputStreamReader(stdout);
+            BufferedReader brStdout = new BufferedReader(isrStdout);
+
+            String programLine = null;
+            while ((programLine = brStdout.readLine()) != null) {
+                System.out.println(programLine);
+            }
+
+            int exitVal = process.waitFor();
+
+            if (exitVal != 0) {
+                System.err.println("Ошибка в работе mystem");
+            }
+        } catch(Exception e) {
+            System.err.println(e.getMessage());
+        }
+    }
+
+    private void writeToFile(String input) throws FileNotFoundException{
+        PrintWriter inputFile = new PrintWriter(new OutputStreamWriter(new FileOutputStream(
+                "C:\\Users\\hp9\\IdeaProjects\\LinguisticAnnotationSystem\\src\\Parsers\\text\\mystem-input.txt"),
+                StandardCharsets.UTF_8), true);
+        inputFile.print(input);
+        inputFile.close();
+    }
+
+    private ArrayList<String> retrieveGrInformation(String gr) {
+        ArrayList<String> props = new ArrayList<String>();
+
+        int begin = 0;
+        int end = Math.min(gr.indexOf('='), gr.indexOf(','));
+        if (end == -1) { end = Math.max(gr.indexOf('='), gr.indexOf(',')); }
+        while (end != -1) {
+            props.add(gr.substring(begin, end));
+            begin = end + 1;
+            end = Math.min(gr.indexOf('=', begin), gr.indexOf(',', begin));
+            if (end == -1) { end = Math.max(gr.indexOf('=', begin), gr.indexOf(',', begin)); }
+        }
+        props.add(gr.substring(begin, gr.length()));
+        return props;
+    }
+
+    public ArrayList<DescriptionList> retrieveDescrXML() {
+
+        ArrayList<DescriptionList> list = new ArrayList<DescriptionList>();
+
+        XmlObject xobj = null;
+        try {
+            xobj = XmlObject.Factory.parse(new File
+                    ("C:\\Users\\hp9\\IdeaProjects\\LinguisticAnnotationSystem\\src\\main\\webapp\\resources\\results\\mystem-output.xml"));
+        } catch (Exception e) {
+            System.err.println(e.getMessage());
+        }
+        XmlCursor cursor = xobj.newCursor();
+        cursor.selectPath("*//w");
+        while (cursor.hasNextSelection()) {
+
+            DescriptionList word = new DescriptionList();
+            cursor.toNextSelection();
+
+            word.word = cursor.getTextValue();
+            word.lemmas = new ArrayList<Lemma>();
+
+            Boolean t = cursor.toFirstChild();
+            while (t) {
+                Lemma lemma = new Lemma();
+                lemma.lemma = cursor.getAttributeText(new QName("lex"));
+                lemma.xmlString = cursor.getAttributeText(new QName("gr"));
+                lemma.properties = retrieveGrInformation(lemma.xmlString);
+                word.lemmas.add(lemma);
+                t = cursor.toNextSibling();
+            }
+            cursor.toParent();
+            list.add(word);
+        }
+
+        return list;
+    }
+
+    public ArrayList<DescriptionList> parse(final String input) throws IllegalArgumentException, FileNotFoundException {
+
+        ArrayList<DescriptionList> result = null;
+            try {
+                writeToFile(input);
+
+                startMystemAnalyzer();
+
+                result = retrieveDescrXML();
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+            }
+        return result;
+    }
+
+}

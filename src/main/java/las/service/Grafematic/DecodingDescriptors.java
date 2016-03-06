@@ -11,7 +11,7 @@ public class DecodingDescriptors {
         HashMap<String, String> result = new HashMap<String, String>();
         try {
             Scanner file = new Scanner(Paths.get
-                    ("C:\\Users\\hp9\\IdeaProjects\\LinguisticAnnotationSystem\\list-of-descriptors\\Dialing-AOT.txt"));
+                    ("C:\\Users\\hp9\\IdeaProjects\\LinguisticAnnotationSystem\\src\\Parsers\\list-of-descriptors\\Dialing-AOT.txt"));
             while (file.hasNextLine()) {
                 String line = file.nextLine();
                 Integer position = line.indexOf(' ');

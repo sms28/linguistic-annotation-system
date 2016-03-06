@@ -3,6 +3,9 @@
     <head>
         <link href='https://fonts.googleapis.com/css?family=Righteous&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" type="text/css" href="/resources/styles/main.css"/>
+
+        <script src="../../resources/libs/jquery.js" defer></script>
+        <script src="../../resources/scripts/determination-tool.js" defer></script>
     </head>
     <body>
         <header class="header">
@@ -20,10 +23,9 @@
             </div>
             <div class="content__form">
                 Введите текст:
-                <form name="inputText" method="post" action="/text-processing.html">
-                    <textarea name="inputText" cols="80" rows="20" class="content__textarea"></textarea>
-                    <input type="submit" class="content__button">
-                </form>
+                <textarea name="inputText" cols="80" rows="20" class="content__textarea"></textarea>
+                <div class="content__button content__button_grafan">Graf</div>
+                <div class="content__button content__button_mystem">Mystem</div>
             </div>
         </div>
         <footer>
