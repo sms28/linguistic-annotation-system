@@ -1,8 +1,8 @@
 <%@ page contentType="text/html; charset=utf-8" language="java" %>
-<%@ page import="las.service.Mystem.DescriptionList" %>
+<%@ page import="las.service.Mystem.MystemDescriptionList" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="java.util.HashMap" %>
-<%@ page import="las.service.Mystem.Lemma" %>
+<%@ page import="las.service.Mystem.MystemLemma" %>
 <html>
 <head>
     <link rel="stylesheet" href="../../resources/styles/main.css"/>
@@ -24,7 +24,7 @@
     </div>
 
     <div class="descriptors">
-        <% ArrayList<DescriptionList> tokens = (ArrayList<DescriptionList>) request.getAttribute("tokens"); %>
+        <% ArrayList<MystemDescriptionList> tokens = (ArrayList<MystemDescriptionList>) request.getAttribute("tokens"); %>
         <% HashMap<String, String> descriptors = (HashMap) request.getAttribute("descriptors"); %>
         <table>
             <thead>
@@ -41,7 +41,7 @@
                 <td><a href="#" class="descriptors-list__link">Дескрипторы...</a></td>
                 <td class="descriptors-list">
                     <div class="descriptors-list__content">
-                        <% for (Lemma lemma : tokens.get(i).lemmas) { %>
+                        <% for (MystemLemma lemma : tokens.get(i).lemmas) { %>
                             <span>Лемма: <span style="font-weight: 700;"><%= lemma.lemma %></span>
                             <br>Грамеммы:
                               <% for (String prop : lemma.properties) { %>

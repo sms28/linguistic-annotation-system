@@ -1,20 +1,18 @@
 package las.service.Mystem;
 
+import las.service.DescriptionList;
+import las.service.Parser;
 import org.apache.xmlbeans.XmlCursor;
-import org.apache.xmlbeans.XmlException;
 import org.apache.xmlbeans.XmlObject;
 
 import javax.xml.namespace.QName;
 import java.io.*;
-import java.lang.reflect.Array;
 import java.nio.charset.StandardCharsets;
-import java.nio.file.Paths;
 import java.util.ArrayList;
-import java.util.Scanner;
 
-public class Parser {
+public class MystemParser implements Parser {
 
-    public Parser() {}
+    public MystemParser() {}
 
     private void startMystemAnalyzer() {
         try {
@@ -83,15 +81,15 @@ public class Parser {
         cursor.selectPath("*//w");
         while (cursor.hasNextSelection()) {
 
-            DescriptionList word = new DescriptionList();
+            MystemDescriptionList word = new MystemDescriptionList();
             cursor.toNextSelection();
 
             word.word = cursor.getTextValue();
-            word.lemmas = new ArrayList<Lemma>();
+            word.lemmas = new ArrayList<MystemLemma>();
 
             Boolean t = cursor.toFirstChild();
             while (t) {
-                Lemma lemma = new Lemma();
+                MystemLemma lemma = new MystemLemma();
                 lemma.lemma = cursor.getAttributeText(new QName("lex"));
                 lemma.xmlString = cursor.getAttributeText(new QName("gr"));
                 lemma.properties = retrieveGrInformation(lemma.xmlString);
@@ -105,7 +103,7 @@ public class Parser {
         return list;
     }
 
-    public ArrayList<DescriptionList> parse(final String input) throws IllegalArgumentException, FileNotFoundException {
+    public ArrayList<DescriptionList> parse(String input) {
 
         ArrayList<DescriptionList> result = null;
             try {

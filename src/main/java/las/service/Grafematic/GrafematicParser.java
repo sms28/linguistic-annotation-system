@@ -1,5 +1,8 @@
 package las.service.Grafematic;
 
+import las.service.DescriptionList;
+import las.service.Parser;
+
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.InputStreamReader;
@@ -8,9 +11,9 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Parser {
+public class GrafematicParser implements Parser {
 
-    public Parser() {}
+    public GrafematicParser() {}
 
     private void startGrafematicAnalyzer() {
         try {
@@ -41,7 +44,7 @@ public class Parser {
         inputFile.close();
     }
 
-    public ArrayList<DescriptionList> parse(final String input) throws IllegalArgumentException, FileNotFoundException {
+    public ArrayList<DescriptionList> parse(String input) {
 
         ArrayList<DescriptionList> result = null;
             try {
@@ -65,7 +68,7 @@ public class Parser {
 
         while (scanner.hasNextLine()) {
             line = new Scanner(scanner.nextLine());
-            DescriptionList res = new DescriptionList();
+            GrafematicDescriptionList res = new GrafematicDescriptionList();
             res.word = line.next();
             res.begin = line.nextInt();
             res.length = line.nextInt();

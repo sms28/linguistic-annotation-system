@@ -1,6 +1,11 @@
 package las.controller;
 
-import las.model.TokenList;
+import las.service.DecodingDescriptors;
+import las.service.Grafematic.GrafematicDecodingDescriptors;
+import las.service.Grafematic.GrafematicParser;
+import las.service.Mystem.MystemDecodingDescriptors;
+import las.service.Mystem.MystemParser;
+import las.service.Parser;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
@@ -13,23 +18,29 @@ public class TextProcessingController {
         return "index";
     }
 
-    @ResponseBody
     @RequestMapping(method = RequestMethod.POST)
-    public String textProcessing(@RequestBody String text, ModelMap model) throws Exception {
-        System.out.println(text);
+    public String textProcessing(@RequestParam(value="inputText") String text,
+                                 @RequestParam(value="annotationType") String select, ModelMap model) {
 
-        // Для графана
-//        Parser parser = new Parser();
-//        model.addAttribute("tokens", parser.parse(inputText));
-//        DecodingDescriptors descriptors = new DecodingDescriptors();
-//        model.addAttribute("descriptors", descriptors.spellOutDescriptors());
-//        return "result-of-processing";
+        Parser parser = null;
+        DecodingDescriptors descriptors = null;
+        String pageName = "";
 
-        // Mystem
-        las.service.Mystem.DecodingDescriptors descriptors = new las.service.Mystem.DecodingDescriptors();
-        model.addAttribute("descriptors", descriptors.spellOutDescriptors());
-        las.service.Mystem.Parser parser = new las.service.Mystem.Parser();
+        if (select.equals("grafan")) {
+            parser = new GrafematicParser();
+            descriptors = new GrafematicDecodingDescriptors();
+            pageName = "result-of-processing";
+        }
+
+        if (select.equals("mystem")) {
+            parser = new MystemParser();
+            descriptors = new MystemDecodingDescriptors();
+            pageName = "result-of-processing-mystem";
+        }
+
         model.addAttribute("tokens", parser.parse(text));
-        return "result-of-processing-mystem";
+        model.addAttribute("descriptors", descriptors.spellOutDescriptors());
+
+        return pageName;
     }
 }

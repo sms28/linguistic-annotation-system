@@ -1,5 +1,5 @@
 <%@ page contentType="text/html; charset=utf-8" language="java" %>
-<%@ page import="las.service.Grafematic.DescriptionList" %>
+<%@ page import="las.service.Grafematic.GrafematicDescriptionList" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="java.util.HashMap" %>
 <html>
@@ -23,7 +23,7 @@
     </div>
 
     <div class="descriptors">
-        <% ArrayList<DescriptionList> tokens = (ArrayList) request.getAttribute("tokens"); %>
+        <% ArrayList<GrafematicDescriptionList> tokens = (ArrayList) request.getAttribute("tokens"); %>
         <% HashMap<String, String> descriptors = (HashMap) request.getAttribute("descriptors"); %>
         <table>
             <thead>

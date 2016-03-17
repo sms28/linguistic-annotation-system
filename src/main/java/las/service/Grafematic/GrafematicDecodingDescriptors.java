@@ -1,17 +1,19 @@
-package las.service.Mystem;
+package las.service.Grafematic;
 
-import java.io.IOException;
+import las.service.DecodingDescriptors;
+
+import java.io.*;
 import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.Scanner;
 
-public class DecodingDescriptors {
+public class GrafematicDecodingDescriptors implements DecodingDescriptors {
 
     public HashMap<String, String> spellOutDescriptors() {
         HashMap<String, String> result = new HashMap<String, String>();
         try {
             Scanner file = new Scanner(Paths.get
-                    ("C:\\Users\\hp9\\IdeaProjects\\LinguisticAnnotationSystem\\src\\Parsers\\list-of-descriptors\\Mystem.txt"));
+                    ("C:\\Users\\hp9\\IdeaProjects\\LinguisticAnnotationSystem\\src\\Parsers\\list-of-descriptors\\Dialing-AOT.txt"));
             while (file.hasNextLine()) {
                 String line = file.nextLine();
                 Integer position = line.indexOf(' ');
