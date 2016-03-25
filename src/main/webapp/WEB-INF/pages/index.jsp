@@ -27,6 +27,7 @@
                     <select name="annotationType" required size="2">
                         <option value="grafan" selected>GrafAn</option>
                         <option value="mystem">Mystem</option>
+                        <option value="mystem&grafan">GrafAn + Mystem</option>
                     </select>
                     <input type="submit">
                 </form>

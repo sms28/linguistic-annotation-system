@@ -1,24 +1,25 @@
 package las.service.Mystem;
 
-import las.service.DecodingDescriptors;
+import las.service.EnglishRussianTitle;
 
 import java.io.IOException;
 import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.Scanner;
 
-public class MystemDecodingDescriptors implements DecodingDescriptors{
+public class MystemDecodingDescriptors {
 
-    public HashMap<String, String> spellOutDescriptors() {
-        HashMap<String, String> result = new HashMap<String, String>();
+    public HashMap<String, EnglishRussianTitle> spellOutDescriptors() {
+        HashMap<String, EnglishRussianTitle> result = new HashMap<String, EnglishRussianTitle>();
         try {
             Scanner file = new Scanner(Paths.get
                     ("C:\\Users\\hp9\\IdeaProjects\\LinguisticAnnotationSystem\\src\\Parsers\\list-of-descriptors\\Mystem.txt"));
+
             while (file.hasNextLine()) {
                 String line = file.nextLine();
                 Integer position = line.indexOf(' ');
                 if (position != -1) {
-                    result.put(line.substring(0, position), line.substring(position + 1));
+                    result.put(line.substring(0, position), new EnglishRussianTitle(line.substring(0, position), line.substring(position + 1)));
                 }
             }
             file.close();

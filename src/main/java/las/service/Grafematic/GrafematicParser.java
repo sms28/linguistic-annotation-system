@@ -1,8 +1,5 @@
 package las.service.Grafematic;
 
-import las.service.DescriptionList;
-import las.service.Parser;
-
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.InputStreamReader;
@@ -11,7 +8,7 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class GrafematicParser implements Parser {
+public class GrafematicParser {
 
     public GrafematicParser() {}
 
@@ -44,9 +41,9 @@ public class GrafematicParser implements Parser {
         inputFile.close();
     }
 
-    public ArrayList<DescriptionList> parse(String input) {
+    public ArrayList<GrafematicDescriptionList> parse(String input) {
 
-        ArrayList<DescriptionList> result = null;
+        ArrayList<GrafematicDescriptionList> result = null;
             try {
                 writeToFile(input);
                 startGrafematicAnalyzer();
@@ -59,9 +56,9 @@ public class GrafematicParser implements Parser {
         return result;
     }
 
-    private ArrayList<DescriptionList> handle(Scanner scanner) {
+    private ArrayList<GrafematicDescriptionList> handle(Scanner scanner) {
 
-        ArrayList<DescriptionList> descriptionData = new ArrayList<DescriptionList>();
+        ArrayList<GrafematicDescriptionList> descriptionData = new ArrayList<GrafematicDescriptionList>();
         //skip processing the first blank line
         Scanner line = new Scanner(scanner.nextLine());
         line.close();
@@ -70,8 +67,8 @@ public class GrafematicParser implements Parser {
             line = new Scanner(scanner.nextLine());
             GrafematicDescriptionList res = new GrafematicDescriptionList();
             res.word = line.next();
-            res.begin = line.nextInt();
-            res.length = line.nextInt();
+            Integer begin = line.nextInt();
+            Integer length = line.nextInt();
             res.properties = new ArrayList<String>();
             while (line.hasNext()) {
                 res.properties.add(line.next());

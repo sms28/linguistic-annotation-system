@@ -35,20 +35,6 @@ public class DownloadController {
             fileIn.close();
             out.flush();
             out.close();
-//            ServletOutputStream servletOut;
-//            FileInputStream fin = new FileInputStream(
-//                    request.getSession().getServletContext().getRealPath("") + "\\resources\\results\\mystem-output.xml");
-//            response.setContentLength(fin.available());
-//             servletOut = response.getOutputStream();
-//
-//            int i;
-//            while ((i = fin.read()) != -1){
-//
-//                servletOut.write(i);
-//
-//            }
-//            servletOut.close();
-//
         } catch(Exception e) {
             System.out.println(e.getMessage());
         }

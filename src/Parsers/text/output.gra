@@ -1,4 +1,6 @@
                                 0 0 BEG DOC
-Маша                            0 4 RLE Aa NAM?
-любит                           5 5 RLE aa
-кашу                            11 4 RLE aa CS? SENT_END
+Ели                             0 3 RLE Aa NAM?
+в                               4 1 RLE aa EXPR1 EXPR2 EXPR_NO16
+лесу                            6 4 RLE aa
+косу                            11 4 RLE aa
+.                               15 1 PUN CS? SENT_END

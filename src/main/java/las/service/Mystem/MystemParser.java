@@ -1,7 +1,5 @@
 package las.service.Mystem;
 
-import las.service.DescriptionList;
-import las.service.Parser;
 import org.apache.xmlbeans.XmlCursor;
 import org.apache.xmlbeans.XmlObject;
 
@@ -10,7 +8,7 @@ import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 
-public class MystemParser implements Parser {
+public class MystemParser {
 
     public MystemParser() {}
 
@@ -19,7 +17,7 @@ public class MystemParser implements Parser {
             ProcessBuilder procBuilder = new ProcessBuilder("C:\\Users\\hp9\\IdeaProjects\\LinguisticAnnotationSystem\\src\\Parsers\\mystem.exe",
                     "-ni", "--format", "xml", "--eng-gr",
                     "C:\\Users\\hp9\\IdeaProjects\\LinguisticAnnotationSystem\\src\\Parsers\\text\\mystem-input.txt",
-                    "C:\\Users\\hp9\\IdeaProjects\\LinguisticAnnotationSystem\\src\\main\\webapp\\resources\\results\\mystem-output.xml");
+                    "C:\\Users\\hp9\\IdeaProjects\\LinguisticAnnotationSystem\\src\\Parsers\\text\\mystem-output.xml");
             procBuilder.redirectErrorStream(true);
 
             Process process = procBuilder.start();
@@ -66,14 +64,14 @@ public class MystemParser implements Parser {
         return props;
     }
 
-    public ArrayList<DescriptionList> retrieveDescrXML() {
+    public ArrayList<MystemDescriptionList> retrieveDescrXML() {
 
-        ArrayList<DescriptionList> list = new ArrayList<DescriptionList>();
+        ArrayList<MystemDescriptionList> list = new ArrayList<MystemDescriptionList>();
 
         XmlObject xobj = null;
         try {
             xobj = XmlObject.Factory.parse(new File
-                    ("C:\\Users\\hp9\\IdeaProjects\\LinguisticAnnotationSystem\\src\\main\\webapp\\resources\\results\\mystem-output.xml"));
+                    ("C:\\Users\\hp9\\IdeaProjects\\LinguisticAnnotationSystem\\src\\Parsers\\text\\mystem-output.xml"));
         } catch (Exception e) {
             System.err.println(e.getMessage());
         }
@@ -91,8 +89,8 @@ public class MystemParser implements Parser {
             while (t) {
                 MystemLemma lemma = new MystemLemma();
                 lemma.lemma = cursor.getAttributeText(new QName("lex"));
-                lemma.xmlString = cursor.getAttributeText(new QName("gr"));
-                lemma.properties = retrieveGrInformation(lemma.xmlString);
+                String xmlString = cursor.getAttributeText(new QName("gr"));
+                lemma.properties = retrieveGrInformation(xmlString);
                 word.lemmas.add(lemma);
                 t = cursor.toNextSibling();
             }
@@ -103,9 +101,9 @@ public class MystemParser implements Parser {
         return list;
     }
 
-    public ArrayList<DescriptionList> parse(String input) {
+    public ArrayList<MystemDescriptionList> parse(String input) {
 
-        ArrayList<DescriptionList> result = null;
+        ArrayList<MystemDescriptionList> result = null;
             try {
                 writeToFile(input);
 

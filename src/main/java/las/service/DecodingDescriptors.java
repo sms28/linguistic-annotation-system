@@ -3,6 +3,6 @@ package las.service;
 
 import java.util.HashMap;
 
-public interface DecodingDescriptors {
-    HashMap<String, String> spellOutDescriptors();
+public class DecodingDescriptors {
+    HashMap<String, EnglishRussianTitle> descriptors;
 }

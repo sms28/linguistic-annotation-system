@@ -1,6 +1,5 @@
 package las.model;
 
-
 import java.util.List;
 
 public class TokenList {
