@@ -23,13 +23,13 @@
             <div class="content__form">
                 Введите текст:
                 <form name="inputText" method="post" action="/text-processing.html">
-                    <textarea name="inputText" cols="80" rows="20"></textarea>
-                    <select name="annotationType" required size="2">
+                    <textarea name="inputText" rows="15" class="content__textarea"></textarea>
+                    <select name="annotationType" required size="10" class="content__select">
                         <option value="grafan" selected>GrafAn</option>
                         <option value="mystem">Mystem</option>
                         <option value="mystem&grafan">GrafAn + Mystem</option>
                     </select>
-                    <input type="submit">
+                    <input type="submit" class="content__submit">
                 </form>
             </div>
         </div>

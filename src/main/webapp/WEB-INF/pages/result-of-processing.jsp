@@ -30,21 +30,23 @@
         <% HashMap<String, EnglishRussianTitle> grafanDescriptors = (HashMap) request.getAttribute("grafanDescriptors"); %>
         <% HashMap<String, EnglishRussianTitle> mystemDescriptors = (HashMap) request.getAttribute("mystemDescriptors"); %>
 
-            <% for (Integer key : tokens.text.keySet()) { %>
+        <% for (Integer key : tokens.text.keySet()) { %>
 
-                <p><%=tokens.text.get(key).word%></p>
+            <span class="descriptors__word"
+                grafan="<%=tokens.text.get(key).grafematicData.toString().replace("[", "").replace("]", "").replace(", ", ",")%>"
+                mystem="<%
+                    String mystem = "";
+                    for(MystemLemma lemma: tokens.text.get(key).morphologicalData) {
+                        mystem += lemma.lemma + ":";
+                        mystem += lemma.properties.toString().replace("[", "").replace("]", "").replace(", ", ",") + "|";
+                    }%><%=mystem%>"><%=tokens.text.get(key).word%></span>
+        <% } %>
 
-                <p><%=tokens.text.get(key).grafematicData.toString()%></p>
 
-                <% for(MystemLemma lemma: tokens.text.get(key).morphologicalData) { %>
+        <div class="descriptors__word-description descriptors__word-description_active" id="descriptors__word-popup">
+            <div class="descriptors__word-description-wrap"></div>
+        </div>
 
-                    <p><%=lemma.lemma%></p>
-                    <p><%=lemma.properties.toString()%></p>
-        <br>
-
-                <% } %>
-        <br>
-            <% } %>
 
     </div>
 
