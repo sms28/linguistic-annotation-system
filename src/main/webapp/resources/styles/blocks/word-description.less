@@ -1,0 +1,114 @@
+/* Styles for word-description */
+.word-description {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+
+    &_active {
+        display: block;
+    }
+
+    &__wrap {
+        width: 100%;
+        height: 100%;
+        background-color: rgba(150, 150, 150, 0.5);
+    }
+
+    &__popup {
+        position: fixed;
+        top: 100px;
+        left: 50%;
+        width: 600px;
+        height: 300px;
+        margin-left: -300px;
+        background-color: #fff;
+        font-size: 0;
+        box-shadow: 0 0 7px 2px #6D6464;
+        font-family: 'Righteous', sans-serif;
+
+        &-title {
+            padding: 10px 20px;
+            border-bottom: 1px solid #bebbbc;
+            font-size: 18px;
+            background-color: #101069;
+            color: #fff;
+
+            &-word {
+                font-weight: 700;
+            }
+        }
+    }
+
+    &__menu {
+        display: inline-block;
+        vertical-align: top;
+        width: 40%;
+
+        &-item {
+            padding: 10px 20px;
+            border-bottom: 1px solid #ddb5fb;
+            font-size: 18px;
+            color: #7c7c7c;
+            cursor: pointer;
+
+            &:hover {
+                color: #000;
+            }
+
+            &_active {
+                background-color: #f6dfff;
+                color: #000;
+                cursor: auto;
+            }
+        }
+    }
+
+    &__grafan {
+        display: inline-block;
+        vertical-align: top;
+        width: 60%;
+        height: 261px;
+        font-size: 16px;
+        background-color: #f6dfff;
+        overflow: auto;
+
+        &-title {
+            margin: 10px;
+            font-weight: 700;
+            font-size: 20px;
+        }
+
+        &-item {
+            padding: 10px;
+
+            &-title {
+                display: inline-block;
+                vertical-align: top;
+                font-size: 17px;
+            }
+        }
+
+        &-delete {
+            display: inline-block;
+            vertical-align: top;
+            margin: 0 15px;
+            float: right;
+        }
+
+        &-add {
+            margin: 20px 10px 10px;
+        }
+    }
+
+    &__link {
+        display: inline-block;
+        vertical-align: top;
+        font-size: 14px;
+        color: #0006FF;
+        border-bottom: 1px dashed #0006FF;
+        cursor: pointer;
+    }
+}

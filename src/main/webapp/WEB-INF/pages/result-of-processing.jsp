@@ -11,6 +11,7 @@
     <script src="../../resources/libs/jquery.js" defer></script>
     <script src="../../resources/scripts/text-processing.js" defer></script>
     <script src="../../resources/scripts/result-save.js" defer></script>
+    <script src="../../resources/scripts/word-description-popup.js" defer></script>
 </head>
 <body>
 <div class="processing-page">
@@ -30,9 +31,24 @@
         <% HashMap<String, EnglishRussianTitle> grafanDescriptors = (HashMap) request.getAttribute("grafanDescriptors"); %>
         <% HashMap<String, EnglishRussianTitle> mystemDescriptors = (HashMap) request.getAttribute("mystemDescriptors"); %>
 
+
+        <!-- Названия дескрипторов в скрытых блоках. ВНИМАНИЕ! ID дескриптора - его название без вопросительных знаков -->
+
+        <div class="descriptors__grafan-terms" id="grafan-terms" style="display:none">
+            <% for (String key : grafanDescriptors.keySet()) { %>
+                <p id="<%=key.replace("?", "")%>" eng="<%=grafanDescriptors.get(key).eng%>"><%=grafanDescriptors.get(key).rus%></p>
+            <% } %>
+        </div>
+
+        <div class="descriptors__mystem-terms" id="mystem-terms" style="display:none">
+            <% for (String key : mystemDescriptors.keySet()) { %>
+            <p id="<%=key%>" eng="<%=mystemDescriptors.get(key).eng%>"><%=mystemDescriptors.get(key).rus%></p>
+            <% } %>
+        </div>
+
         <% for (Integer key : tokens.text.keySet()) { %>
 
-            <span class="descriptors__word"
+            <span class="descriptors__word" id="<%=key%>"
                 grafan="<%=tokens.text.get(key).grafematicData.toString().replace("[", "").replace("]", "").replace(", ", ",")%>"
                 mystem="<%
                     String mystem = "";
@@ -41,13 +57,27 @@
                         mystem += lemma.properties.toString().replace("[", "").replace("]", "").replace(", ", ",") + "|";
                     }%><%=mystem%>"><%=tokens.text.get(key).word%></span>
         <% } %>
+    </div>
 
 
-        <div class="descriptors__word-description descriptors__word-description_active" id="descriptors__word-popup">
-            <div class="descriptors__word-description-wrap"></div>
+
+
+    <!-- Popup с характеристиками слова -->
+
+    <div class="word-description" id="word-popup">
+        <div class="word-description__wrap">
+            <div class="word-description__popup">
+                <div class="word-description__popup-title">
+                    <span class="word-description__popup-title-word">Слово: </span>
+                    <span class="word-description__popup-title-lemma">Лемма</span>
+                </div>
+                <div class="word-description__menu">
+                    <div class="word-description__menu-item word-description__menu-item_grafan word-description__menu-item_active">Графематическая разметка</div>
+                    <div class="word-description__menu-item word-description__menu-item_mystem">Морфологическая разметка</div>
+                </div>
+                <div class="word-description__grafan"></div>
+            </div>
         </div>
-
-
     </div>
 
 </div>
