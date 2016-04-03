@@ -64,18 +64,23 @@
 
     <!-- Popup с характеристиками слова -->
 
-    <div class="word-description" id="word-popup">
+    <div class="word-description" id="word-popup" activeblock="grafan">
         <div class="word-description__wrap">
             <div class="word-description__popup">
                 <div class="word-description__popup-title">
                     <span class="word-description__popup-title-word">Слово: </span>
                     <span class="word-description__popup-title-lemma">Лемма</span>
                 </div>
-                <div class="word-description__menu">
-                    <div class="word-description__menu-item word-description__menu-item_grafan word-description__menu-item_active">Графематическая разметка</div>
-                    <div class="word-description__menu-item word-description__menu-item_mystem">Морфологическая разметка</div>
+                <div class="word-description__popup-content">
+                    <div class="word-description__menu">
+                        <div class="word-description__menu-item word-description__menu-item_active" type="grafan">Графематическая разметка</div>
+                        <div class="word-description__menu-item" type="mystem">Морфологическая разметка</div>
+                    </div>
+                    <div class="word-description__content">
+                        <div class="word-description__grafan"></div>
+                        <div class="word-description__mystem"></div>
+                    </div>
                 </div>
-                <div class="word-description__grafan"></div>
             </div>
         </div>
     </div>

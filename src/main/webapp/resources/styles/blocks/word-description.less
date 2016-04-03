@@ -19,11 +19,11 @@
 
     &__popup {
         position: fixed;
-        top: 100px;
+        top: 90px;
         left: 50%;
-        width: 600px;
-        height: 300px;
-        margin-left: -300px;
+        width: 700px;
+        height: 460px;
+        margin-left: -350px;
         background-color: #fff;
         font-size: 0;
         box-shadow: 0 0 7px 2px #6D6464;
@@ -45,7 +45,7 @@
     &__menu {
         display: inline-block;
         vertical-align: top;
-        width: 40%;
+        width: 30%;
 
         &-item {
             padding: 10px 20px;
@@ -66,14 +66,18 @@
         }
     }
 
-    &__grafan {
+    &__content {
         display: inline-block;
         vertical-align: top;
-        width: 60%;
-        height: 261px;
+        width: 70%;
+        height: 421px;
         font-size: 16px;
         background-color: #f6dfff;
         overflow: auto;
+    }
+
+    &__grafan {
+        display: none;
 
         &-title {
             margin: 10px;
@@ -83,6 +87,56 @@
 
         &-item {
             padding: 10px;
+            border-bottom: 1px solid rgba(100, 100, 100, 0.3);
+
+            &-title {
+                display: inline-block;
+                vertical-align: top;
+                margin-right: 10px;
+                font-size: 17px;
+            }
+        }
+
+        &-delete {
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        &-add {
+            margin: 20px 10px 10px;
+        }
+    }
+
+
+    &__mystem {
+        display: none;
+
+        &-title {
+            margin: 10px;
+            font-weight: 700;
+            font-size: 20px;
+        }
+
+        &-lemma {
+            display: inline-block;
+            vertical-align: top;
+            padding: 10px;
+            margin-right: 10px;
+            font-size: 19px;
+
+            &-block {
+                margin: 30px 0;
+                border-top: 1px solid rgba(100, 100, 100, 0.3);
+                border-bottom: 1px solid rgba(100, 100, 100, 0.3);
+            }
+
+            &-text {
+                font-weight: 700;
+            }
+        }
+
+        &-item {
+            padding: 7px 10px;
 
             &-title {
                 display: inline-block;
@@ -94,7 +148,7 @@
         &-delete {
             display: inline-block;
             vertical-align: top;
-            margin: 0 15px;
+            margin: 12px;
             float: right;
         }
 
@@ -102,6 +156,16 @@
             margin: 20px 10px 10px;
         }
     }
+
+
+    &[activeblock="grafan"] &__grafan {
+        display: block;
+    }
+
+    &[activeblock="mystem"] &__mystem {
+        display: block;
+    }
+
 
     &__link {
         display: inline-block;

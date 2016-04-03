@@ -178,7 +178,13 @@ body {
   font-size: 18px;
   font-family: 'Righteous', sans-serif;
   cursor: pointer;
-  padding: 0 14px;
+  padding: 7px 14px;
+  margin-right: 10px;
+  border: 1px dashed #cc0000;
+  border-radius: 4px;
+}
+.descriptors__word:hover {
+  border-color: #e80000;
 }
 .header {
   height: 40%;
@@ -267,11 +273,11 @@ body {
 }
 .word-description__popup {
   position: fixed;
-  top: 100px;
+  top: 90px;
   left: 50%;
-  width: 600px;
-  height: 300px;
-  margin-left: -300px;
+  width: 700px;
+  height: 460px;
+  margin-left: -350px;
   background-color: #fff;
   font-size: 0;
   box-shadow: 0 0 7px 2px #6D6464;
@@ -290,7 +296,7 @@ body {
 .word-description__menu {
   display: inline-block;
   vertical-align: top;
-  width: 40%;
+  width: 30%;
 }
 .word-description__menu-item {
   padding: 10px 20px;
@@ -307,14 +313,17 @@ body {
   color: #000;
   cursor: auto;
 }
-.word-description__grafan {
+.word-description__content {
   display: inline-block;
   vertical-align: top;
-  width: 60%;
-  height: 261px;
+  width: 70%;
+  height: 421px;
   font-size: 16px;
   background-color: #f6dfff;
   overflow: auto;
+}
+.word-description__grafan {
+  display: none;
 }
 .word-description__grafan-title {
   margin: 10px;
@@ -323,20 +332,66 @@ body {
 }
 .word-description__grafan-item {
   padding: 10px;
+  border-bottom: 1px solid rgba(100, 100, 100, 0.3);
 }
 .word-description__grafan-item-title {
   display: inline-block;
   vertical-align: top;
+  margin-right: 10px;
   font-size: 17px;
 }
 .word-description__grafan-delete {
   display: inline-block;
   vertical-align: top;
-  margin: 0 15px;
-  float: right;
 }
 .word-description__grafan-add {
   margin: 20px 10px 10px;
+}
+.word-description__mystem {
+  display: none;
+}
+.word-description__mystem-title {
+  margin: 10px;
+  font-weight: 700;
+  font-size: 20px;
+}
+.word-description__mystem-lemma {
+  display: inline-block;
+  vertical-align: top;
+  padding: 10px;
+  margin-right: 10px;
+  font-size: 19px;
+}
+.word-description__mystem-lemma-block {
+  margin: 30px 0;
+  border-top: 1px solid rgba(100, 100, 100, 0.3);
+  border-bottom: 1px solid rgba(100, 100, 100, 0.3);
+}
+.word-description__mystem-lemma-text {
+  font-weight: 700;
+}
+.word-description__mystem-item {
+  padding: 7px 10px;
+}
+.word-description__mystem-item-title {
+  display: inline-block;
+  vertical-align: top;
+  font-size: 17px;
+}
+.word-description__mystem-delete {
+  display: inline-block;
+  vertical-align: top;
+  margin: 12px;
+  float: right;
+}
+.word-description__mystem-add {
+  margin: 20px 10px 10px;
+}
+.word-description[activeblock="grafan"] .word-description__grafan {
+  display: block;
+}
+.word-description[activeblock="mystem"] .word-description__mystem {
+  display: block;
 }
 .word-description__link {
   display: inline-block;

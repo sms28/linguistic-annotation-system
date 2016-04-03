@@ -2,8 +2,7 @@
 <html><body>
 
 <se>
-<w>Дениска<ana lex="дениска" gr="S,persn,m,anim=nom,sg" /><ana lex="дениск" gr="S,persn,m,anim=acc,sg" /><ana lex="дениск" gr="S,persn,m,anim=gen,sg" /></w>
-<w>любит<ana lex="любить" gr="V,ipf,tran=inpraes,sg,indic,3p" /></w>
-<w>Тимошку<ana lex="тимошка" gr="S,persn,m,anim=acc,sg" /></w>
+<w>Привет<ana lex="привет" gr="S,m,inan=acc,sg" /><ana lex="привет" gr="S,m,inan=nom,sg" /></w>
+<w>Маша<ana lex="маша" gr="S,persn,f,anim=nom,sg" /><ana lex="махать" gr="V,ipf,intr=inpraes,ger" /></w>
 </se>
 </body></html>
