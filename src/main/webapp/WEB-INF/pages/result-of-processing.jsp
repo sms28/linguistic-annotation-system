@@ -70,6 +70,7 @@
                 <div class="word-description__popup-title">
                     <span class="word-description__popup-title-word">Слово: </span>
                     <span class="word-description__popup-title-lemma">Лемма</span>
+                    <div class="word-description__popup-close"></div>
                 </div>
                 <div class="word-description__popup-content">
                     <div class="word-description__menu">
@@ -81,6 +82,14 @@
                         <div class="word-description__mystem"></div>
                     </div>
                 </div>
+            </div>
+
+            <div class="word-description__additional-descriptors-popup">
+                <div class="word-description__additional-descriptors-popup-title">
+                    <span class="word-description__popup-title-word"></span>
+                    <div class="word-description__additional-descriptors-popup-close"></div>
+                </div>
+                <div class="word-description__additional-descriptors-popup-content"></div>
             </div>
         </div>
     </div>

@@ -293,6 +293,43 @@ body {
 .word-description__popup-title-word {
   font-weight: 700;
 }
+.word-description__popup-close {
+  position: absolute;
+  top: 1px;
+  right: 1px;
+  width: 35px;
+  height: 35px;
+  background-image: url("/resources/image/cross.png");
+  background-size: cover;
+  cursor: pointer;
+}
+.word-description__additional-descriptors-popup {
+  position: fixed;
+  top: 70px;
+  left: 50%;
+  width: 700px;
+  height: 600px;
+  margin-left: -350px;
+  background-color: #fff;
+  font-size: 0;
+  box-shadow: 0 0 7px 2px #6D6464;
+  font-family: 'Righteous', sans-serif;
+}
+.word-description__additional-descriptors-popup-title {
+  padding: 10px 20px;
+  border-bottom: 1px solid #bebbbc;
+  font-size: 18px;
+  background-color: #101069;
+  color: #fff;
+}
+.word-description__additional-descriptors-popup-content {
+  padding: 10px 20px;
+  font-size: 16px;
+}
+.word-description__additional-descriptors-popup-item {
+  padding: 10px;
+  border-bottom: 1px solid rgba(100, 100, 100, 0.3);
+}
 .word-description__menu {
   display: inline-block;
   vertical-align: top;
