@@ -32,11 +32,12 @@
         <% HashMap<String, EnglishRussianTitle> mystemDescriptors = (HashMap) request.getAttribute("mystemDescriptors"); %>
 
 
-        <!-- Названия дескрипторов в скрытых блоках. ВНИМАНИЕ! ID дескриптора - его название без вопросительных знаков -->
+        <!-- Названия дескрипторов в скрытых блоках. ВНИМАНИЕ! ID дескриптора - его название без вопросительных знаков
+        (вместо вопросительных знаков "Q") -->
 
         <div class="descriptors__grafan-terms" id="grafan-terms" style="display:none">
             <% for (String key : grafanDescriptors.keySet()) { %>
-                <p id="<%=key.replace("?", "")%>" eng="<%=grafanDescriptors.get(key).eng%>"><%=grafanDescriptors.get(key).rus%></p>
+                <p id="<%=key.replace("?", "Q")%>" eng="<%=grafanDescriptors.get(key).eng%>"><%=grafanDescriptors.get(key).rus%></p>
             <% } %>
         </div>
 
@@ -49,12 +50,12 @@
         <% for (Integer key : tokens.text.keySet()) { %>
 
             <span class="descriptors__word" id="<%=key%>"
-                grafan="<%=tokens.text.get(key).grafematicData.toString().replace("[", "").replace("]", "").replace(", ", ",")%>"
+                grafan="<%=tokens.text.get(key).grafematicData.toString().replace("[", "").replace("]", "").replace(", ", "|").replace("?", "Q") + "|"%>"
                 mystem="<%
                     String mystem = "";
                     for(MystemLemma lemma: tokens.text.get(key).morphologicalData) {
                         mystem += lemma.lemma + ":";
-                        mystem += lemma.properties.toString().replace("[", "").replace("]", "").replace(", ", ",") + "|";
+                        mystem += lemma.properties.toString().replace("[", "").replace("]", "").replace(", ", ",") + ",|";
                     }%><%=mystem%>"><%=tokens.text.get(key).word%></span>
         <% } %>
     </div>
@@ -84,12 +85,16 @@
                 </div>
             </div>
 
-            <div class="word-description__additional-descriptors-popup">
-                <div class="word-description__additional-descriptors-popup-title">
-                    <span class="word-description__popup-title-word"></span>
-                    <div class="word-description__additional-descriptors-popup-close"></div>
+            <div class="additional-descriptors-popup">
+                <div class="additional-descriptors-popup__title">
+                    <span class="additional-descriptors-popup__title-word"></span>
+                    <div class="additional-descriptors-popup__close"></div>
                 </div>
-                <div class="word-description__additional-descriptors-popup-content"></div>
+                <div class="additional-descriptors-popup__content"></div>
+                <div class="additional-descriptors-popup__bottom">
+                    <button class="additional-descriptors-popup__button additional-descriptors-popup__button_save">Сохранить</button>
+                    <button class="additional-descriptors-popup__button additional-descriptors-popup__button_cancel">Отменить</button>
+                </div>
             </div>
         </div>
     </div>

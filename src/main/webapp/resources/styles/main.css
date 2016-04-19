@@ -120,6 +120,72 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+/* Styles for additional-descriptors-popup */
+.additional-descriptors-popup {
+  display: none;
+  position: fixed;
+  top: 70px;
+  left: 50%;
+  width: 700px;
+  height: 600px;
+  overflow: hidden;
+  margin-left: -350px;
+  background-color: #fff;
+  font-size: 0;
+  box-shadow: 0 0 7px 2px #6D6464;
+  font-family: 'Righteous', sans-serif;
+}
+.additional-descriptors-popup_active {
+  display: block;
+}
+.additional-descriptors-popup__title {
+  padding: 10px 20px;
+  border-bottom: 1px solid #bebbbc;
+  font-size: 18px;
+  background-color: #101069;
+  color: #fff;
+}
+.additional-descriptors-popup__title-word {
+  font-weight: 700;
+}
+.additional-descriptors-popup__content {
+  overflow: auto;
+  height: 518px;
+}
+.additional-descriptors-popup__close {
+  position: absolute;
+  top: 1px;
+  right: 1px;
+  width: 35px;
+  height: 35px;
+  background-image: url("/resources/image/cross.png");
+  background-size: cover;
+  cursor: pointer;
+}
+.additional-descriptors-popup__checkbox {
+  margin-right: 20px;
+  width: 17px;
+  height: 17px;
+  cursor: pointer;
+}
+.additional-descriptors-popup__item {
+  padding: 20px;
+  font-size: 16px;
+  border-bottom: 1px solid #dfdfdf;
+}
+.additional-descriptors-popup__item label {
+  cursor: pointer;
+}
+.additional-descriptors-popup__bottom {
+  padding: 0 15px;
+  text-align: right;
+  height: 43px;
+  background-color: #9299AF;
+}
+.additional-descriptors-popup__button {
+  margin: 7px;
+  padding: 6px;
+}
 body {
   min-width: 1050px;
 }
@@ -302,33 +368,6 @@ body {
   background-image: url("/resources/image/cross.png");
   background-size: cover;
   cursor: pointer;
-}
-.word-description__additional-descriptors-popup {
-  position: fixed;
-  top: 70px;
-  left: 50%;
-  width: 700px;
-  height: 600px;
-  margin-left: -350px;
-  background-color: #fff;
-  font-size: 0;
-  box-shadow: 0 0 7px 2px #6D6464;
-  font-family: 'Righteous', sans-serif;
-}
-.word-description__additional-descriptors-popup-title {
-  padding: 10px 20px;
-  border-bottom: 1px solid #bebbbc;
-  font-size: 18px;
-  background-color: #101069;
-  color: #fff;
-}
-.word-description__additional-descriptors-popup-content {
-  padding: 10px 20px;
-  font-size: 16px;
-}
-.word-description__additional-descriptors-popup-item {
-  padding: 10px;
-  border-bottom: 1px solid rgba(100, 100, 100, 0.3);
 }
 .word-description__menu {
   display: inline-block;
