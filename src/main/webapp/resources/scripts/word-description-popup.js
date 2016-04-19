@@ -16,6 +16,8 @@ $(function() {
         addMystemButton: "word-description__mystem-add",
         closeButton: "word-description__popup-close",
         additionalPopup: "additional-descriptors-popup",
+        additionalPopupItem: "additional-descriptors-popup__item",
+        additionalPopupTextInput: "additional-descriptors-popup__text-input",
         additionalPopupActive: "additional-descriptors-popup_active",
         additionalPopupClose: "additional-descriptors-popup__close",
         additionalPopupTitle: "additional-descriptors-popup__title-word",
@@ -170,8 +172,7 @@ $(function() {
     }
 
     function showAdditionalGrafanDescriptorsPopup() {
-
-        $additionalPopup.addClass(classes.additionalPopupActive);
+        $additionalPopupSave.off("click").on("click", saveGrafanDescriptorsFromAdditionalPopup);
         $additionalPopupTitle.html("Добавление нового дескриптора");
         $additionalPopupContent.html("");
 
@@ -182,11 +183,13 @@ $(function() {
                 $additionalPopupContent.append(additionalPopupItemMarkup($(terms[i]).html(), $(terms[i]).attr("id")));
             }
         }
+
+        $additionalPopup.addClass(classes.additionalPopupActive);
     }
 
     function saveGrafanDescriptorsFromAdditionalPopup() {
         var i,
-            items = $additionalPopupContent.find(".additional-descriptors-popup__item"),
+            items = $additionalPopupContent.find("." + classes.additionalPopupItem),
             result = "";
         for(i = 0; i < items.length; ++i) {
             if($(items[i]).find("input[type='checkbox']").prop("checked")) {
@@ -211,11 +214,38 @@ $(function() {
     }
 
     function showAdditionalMystemDescriptorsPopup() {
+        $additionalPopupSave.off("click").on("click", saveMystemDescriptorsFromAdditionalPopup);
+        $additionalPopupTitle.html("Добавление новой группы");
+        $additionalPopupContent.html("");
+
+        $additionalPopupContent.append('<input type="text" class="additional-descriptors-popup__text-input" placeholder="Лемма"/>');
+
+        var i,
+            terms = $mystemTerms.children();
+        for(i = 0; i < terms.length; ++i) {
+            $additionalPopupContent.append(additionalPopupItemMarkup($(terms[i]).html(), $(terms[i]).attr("id")));
+        }
 
         $additionalPopup.addClass(classes.additionalPopupActive);
+    }
 
-        $additionalPopupTitle.html("Добавление новой группы");
+    function saveMystemDescriptorsFromAdditionalPopup() {
+        var i,
+            lemma = $("." + classes.additionalPopupTextInput).val(),
+            items = $additionalPopupContent.find("." + classes.additionalPopupItem),
+            result = lemma.toLowerCase() + ":";
 
+        for(i = 0; i < items.length; ++i) {
+            if($(items[i]).find("input[type='checkbox']").prop("checked")) {
+                result += $(items[i]).attr("descriptor") + ",";
+            }
+        }
+        $currentWord.attr("mystem", $currentWord.attr("mystem") + result + "|");
+
+        updateMystemDataPopup();
+
+        // Close popup
+        $additionalPopup.removeClass(classes.additionalPopupActive);
     }
 
     function closePopup() {
@@ -272,7 +302,6 @@ $(function() {
         $closeButton.on("click", closePopup);
         $additionalPopupClose.on("click", closeAdditionalPopup);
         $additionalPopupCancel.on("click", closeAdditionalPopup);
-        $additionalPopupSave.on("click", saveGrafanDescriptorsFromAdditionalPopup);
     }
 
     function init() {

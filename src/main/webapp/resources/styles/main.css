@@ -168,6 +168,11 @@ table {
   height: 17px;
   cursor: pointer;
 }
+.additional-descriptors-popup__text-input {
+  margin: 20px;
+  padding: 10px;
+  font-size: 18px;
+}
 .additional-descriptors-popup__item {
   padding: 20px;
   font-size: 16px;
