@@ -13,7 +13,7 @@ public class GrafematicDecodingDescriptors {
         HashMap<String, EnglishRussianTitle> result = new HashMap<String, EnglishRussianTitle>();
         try {
             Scanner file = new Scanner(Paths.get
-                    ("C:\\Users\\hp9\\IdeaProjects\\LinguisticAnnotationSystem\\src\\Parsers\\list-of-descriptors\\Dialing-AOT.txt"));
+                    ("C:\\Users\\hp9\\IdeaProjects\\LinguisticAnnotationSystem\\src\\Parsers\\ListOfDescriptors\\Grafan.txt"));
 
             while (file.hasNextLine()) {
                 String line = file.nextLine();

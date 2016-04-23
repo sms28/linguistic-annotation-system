@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<texts>
+	<text>
+		<goal name="AT">
+			<match startPos="21" endPos="42">
+				<fragment>изящные выражения лиц</fragment>
+				<result>ЛИЦ ВЫРАЖЕНИЯ ИЗЯЩНЫЕ</result>
+				<result>ЛИЦ ВЫРАЖЕНИЯ ИЗЯЩНЫЕ</result>
+				<result>ЛИЦ ВЫРАЖЕНИЯ ИЗЯЩНЫЕ</result>
+				<result>ЛИЦ ВЫРАЖЕНИЯ ИЗЯЩНЫЕ</result>
+			</match>
+		</goal>
+	</text>
+</texts>

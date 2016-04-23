@@ -1,2 +1,23 @@
                                 0 0 BEG DOC
-hhfhf                           0 5 LLE aa CS? SENT_END
+√л€д€                           0 5 RLE Aa NAM?
+на                              6 2 RLE aa EXPR1 EXPR2 EXPR_NO277
+уверенные                       9 9 RLE aa
+и                               19 1 RLE aa EXPR1 EXPR2 EXPR_NO225
+из€щные                         21 7 RLE aa
+выражени€                       29 9 RLE aa
+лиц                             39 3 RLE aa
+,                               42 1 PUN
+собранных                       44 9 RLE aa
+здесь                           54 5 RLE aa
+,                               59 1 PUN
+он                              61 2 RLE aa
+ББ                              63 2 DEL SPC
+все                             65 3 RLE aa
+ББ                              68 2 DEL SPC
+ждал                            70 4 RLE aa
+ББ                              74 2 DEL SPC
+чего-нибудь                     76 11 RLE aa
+ББ                              87 2 DEL SPC
+особенно                        89 8 RLE aa
+умного                          98 6 RLE aa
+.                               104 1 PUN CS? SENT_END

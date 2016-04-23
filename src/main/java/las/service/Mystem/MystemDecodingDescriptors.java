@@ -13,7 +13,7 @@ public class MystemDecodingDescriptors {
         HashMap<String, EnglishRussianTitle> result = new HashMap<String, EnglishRussianTitle>();
         try {
             Scanner file = new Scanner(Paths.get
-                    ("C:\\Users\\hp9\\IdeaProjects\\LinguisticAnnotationSystem\\src\\Parsers\\list-of-descriptors\\Mystem.txt"));
+                    ("C:\\Users\\hp9\\IdeaProjects\\LinguisticAnnotationSystem\\src\\Parsers\\ListOfDescriptors\\Mystem.txt"));
 
             while (file.hasNextLine()) {
                 String line = file.nextLine();

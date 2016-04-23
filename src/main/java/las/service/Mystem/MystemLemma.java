@@ -9,4 +9,8 @@ public class MystemLemma implements Serializable {
     public String lemma;
     public ArrayList<String> properties;
 
+    public MystemLemma() {
+        this.properties = new ArrayList<String>();
+    }
+
 }

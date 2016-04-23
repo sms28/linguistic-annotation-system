@@ -12,10 +12,12 @@ public class GrafematicParser {
 
     public GrafematicParser() {}
 
+    private static String PATH = "C:\\Users\\hp9\\IdeaProjects\\LinguisticAnnotationSystem\\src\\Parsers\\";
+
     private void startGrafematicAnalyzer() {
         try {
             String line;
-            Process p = Runtime.getRuntime().exec("C:\\Users\\hp9\\IdeaProjects\\LinguisticAnnotationSystem\\src\\Parsers\\GraphAn.exe");
+            Process p = Runtime.getRuntime().exec(PATH + "GraphAn.exe");
             p.waitFor();
             BufferedReader bri = new BufferedReader(new InputStreamReader(p.getInputStream()));
             BufferedReader bre = new BufferedReader(new InputStreamReader(p.getErrorStream()));
@@ -36,19 +38,19 @@ public class GrafematicParser {
 
     private void writeToFile(String input) throws FileNotFoundException{
         PrintWriter inputFile = new PrintWriter
-                ("C:\\Users\\hp9\\IdeaProjects\\LinguisticAnnotationSystem\\src\\Parsers\\text\\input.txt");
+                (PATH + "text\\input.txt");
         inputFile.print(input);
         inputFile.close();
     }
 
-    public ArrayList<GrafematicDescriptionList> parse(String input) {
+    public ArrayList<GrafematicWordDescription> parse(String input) {
 
-        ArrayList<GrafematicDescriptionList> result = null;
+        ArrayList<GrafematicWordDescription> result = null;
             try {
                 writeToFile(input);
                 startGrafematicAnalyzer();
                 Scanner outputFile = new Scanner(Paths.get
-                        ("C:\\Users\\hp9\\IdeaProjects\\LinguisticAnnotationSystem\\src\\Parsers\\text\\output.gra"));
+                        (PATH + "text\\output.gra"));
                 result = handle(outputFile);
             } catch (Exception e) {
                 System.out.println(e.getMessage());
@@ -56,19 +58,19 @@ public class GrafematicParser {
         return result;
     }
 
-    private ArrayList<GrafematicDescriptionList> handle(Scanner scanner) {
+    private ArrayList<GrafematicWordDescription> handle(Scanner scanner) {
 
-        ArrayList<GrafematicDescriptionList> descriptionData = new ArrayList<GrafematicDescriptionList>();
+        ArrayList<GrafematicWordDescription> descriptionData = new ArrayList<GrafematicWordDescription>();
         //skip processing the first blank line
         Scanner line = new Scanner(scanner.nextLine());
         line.close();
 
         while (scanner.hasNextLine()) {
             line = new Scanner(scanner.nextLine());
-            GrafematicDescriptionList res = new GrafematicDescriptionList();
+            GrafematicWordDescription res = new GrafematicWordDescription();
             res.word = line.next();
-            Integer begin = line.nextInt();
-            Integer length = line.nextInt();
+            res.begin = line.nextInt();
+            res.end = res.begin + line.nextInt();
             res.properties = new ArrayList<String>();
             while (line.hasNext()) {
                 res.properties.add(line.next());

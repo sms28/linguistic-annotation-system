@@ -10,14 +10,17 @@ import java.util.ArrayList;
 
 public class MystemParser {
 
+    private static String PATH = "C:\\Users\\hp9\\IdeaProjects\\LinguisticAnnotationSystem\\src\\Parsers\\";
+
     public MystemParser() {}
 
     private void startMystemAnalyzer() {
         try {
-            ProcessBuilder procBuilder = new ProcessBuilder("C:\\Users\\hp9\\IdeaProjects\\LinguisticAnnotationSystem\\src\\Parsers\\mystem.exe",
+            ProcessBuilder procBuilder = new ProcessBuilder(
+                    PATH + "mystem.exe",
                     "-ni", "--format", "xml", "--eng-gr",
-                    "C:\\Users\\hp9\\IdeaProjects\\LinguisticAnnotationSystem\\src\\Parsers\\text\\mystem-input.txt",
-                    "C:\\Users\\hp9\\IdeaProjects\\LinguisticAnnotationSystem\\src\\Parsers\\text\\mystem-output.xml");
+                    PATH + "text\\mystem-input.txt",
+                    PATH + "text\\mystem-output.xml");
             procBuilder.redirectErrorStream(true);
 
             Process process = procBuilder.start();
@@ -25,7 +28,7 @@ public class MystemParser {
             InputStreamReader isrStdout = new InputStreamReader(stdout);
             BufferedReader brStdout = new BufferedReader(isrStdout);
 
-            String programLine = null;
+            String programLine;
             while ((programLine = brStdout.readLine()) != null) {
                 System.out.println(programLine);
             }
@@ -42,7 +45,7 @@ public class MystemParser {
 
     private void writeToFile(String input) throws FileNotFoundException{
         PrintWriter inputFile = new PrintWriter(new OutputStreamWriter(new FileOutputStream(
-                "C:\\Users\\hp9\\IdeaProjects\\LinguisticAnnotationSystem\\src\\Parsers\\text\\mystem-input.txt"),
+                PATH + "text\\mystem-input.txt"),
                 StandardCharsets.UTF_8), true);
         inputFile.print(input);
         inputFile.close();
@@ -64,14 +67,14 @@ public class MystemParser {
         return props;
     }
 
-    public ArrayList<MystemDescriptionList> retrieveDescrXML() {
+    public ArrayList<MystemWordDescription> retrieveDescrXML() {
 
-        ArrayList<MystemDescriptionList> list = new ArrayList<MystemDescriptionList>();
+        ArrayList<MystemWordDescription> list = new ArrayList<MystemWordDescription>();
 
         XmlObject xobj = null;
         try {
             xobj = XmlObject.Factory.parse(new File
-                    ("C:\\Users\\hp9\\IdeaProjects\\LinguisticAnnotationSystem\\src\\Parsers\\text\\mystem-output.xml"));
+                    (PATH + "text\\mystem-output.xml"));
         } catch (Exception e) {
             System.err.println(e.getMessage());
         }
@@ -79,7 +82,7 @@ public class MystemParser {
         cursor.selectPath("*//w");
         while (cursor.hasNextSelection()) {
 
-            MystemDescriptionList word = new MystemDescriptionList();
+            MystemWordDescription word = new MystemWordDescription();
             cursor.toNextSelection();
 
             word.word = cursor.getTextValue();
@@ -101,9 +104,9 @@ public class MystemParser {
         return list;
     }
 
-    public ArrayList<MystemDescriptionList> parse(String input) {
+    public ArrayList<MystemWordDescription> parse(String input) {
 
-        ArrayList<MystemDescriptionList> result = null;
+        ArrayList<MystemWordDescription> result = null;
             try {
                 writeToFile(input);
 

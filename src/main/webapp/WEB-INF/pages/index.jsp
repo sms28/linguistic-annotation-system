@@ -28,6 +28,7 @@
                         <option value="grafan" selected>GrafAn</option>
                         <option value="mystem">Mystem</option>
                         <option value="mystem&grafan">GrafAn + Mystem</option>
+                        <option value="term&grafan">Term + GrafAn</option>
                     </select>
                     <input type="submit" class="content__submit">
                 </form>

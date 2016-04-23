@@ -2,11 +2,13 @@ package las.controller;
 
 import las.service.EnglishRussianTitle;
 import las.service.Grafematic.GrafematicDecodingDescriptors;
-import las.service.Grafematic.GrafematicDescriptionList;
+import las.service.Grafematic.GrafematicWordDescription;
 import las.service.Grafematic.GrafematicParser;
-import las.service.GrafematicMystemText;
+import las.service.LSPLPatterns.LSPLPatternsParser;
+import las.service.LSPLPatterns.LSPLPatternsWordDescription;
+import las.service.TextCharacteristics;
 import las.service.Mystem.MystemDecodingDescriptors;
-import las.service.Mystem.MystemDescriptionList;
+import las.service.Mystem.MystemWordDescription;
 import las.service.Mystem.MystemParser;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -41,26 +43,35 @@ public class TextProcessingController {
 
 
 
-        GrafematicMystemText tokens = null;
+        TextCharacteristics tokens = null;
 
 
         // Только графематическая разметка
         if (select.equals("grafan")) {
             GrafematicParser parser = new GrafematicParser();
-            tokens = new GrafematicMystemText(parser.parse(text), new ArrayList<MystemDescriptionList>());
+            tokens = new TextCharacteristics(parser.parse(text), new ArrayList<MystemWordDescription>());
         }
 
         // Только морфологическая разметка
         if (select.equals("mystem")) {
             MystemParser parser = new MystemParser();
-            tokens = new GrafematicMystemText(new ArrayList<GrafematicDescriptionList>(), parser.parse(text));
+            tokens = new TextCharacteristics(new ArrayList<GrafematicWordDescription>(), parser.parse(text));
         }
 
         // Морфологическая и графематическая разметка
         if (select.equals("mystem&grafan")) {
             GrafematicParser gParser = new GrafematicParser();
             MystemParser mParser = new MystemParser();
-            tokens = new GrafematicMystemText(gParser.parse(text), mParser.parse(text));
+            tokens = new TextCharacteristics(gParser.parse(text), mParser.parse(text));
+        }
+
+        // Терминологическая разметка
+        if (select.equals("term&grafan")) {
+            GrafematicParser gParser = new GrafematicParser();
+            LSPLPatternsParser lParser = new LSPLPatternsParser();
+            ArrayList<GrafematicWordDescription> grafanData = gParser.parse(text);
+            ArrayList<LSPLPatternsWordDescription> ksdjcsdhjds = lParser.parse(text, grafanData);
+            tokens = new TextCharacteristics(grafanData, new ArrayList<MystemWordDescription>());
         }
 
         model.addAttribute("tokens", tokens);
