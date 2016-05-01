@@ -13,10 +13,10 @@
 <div class="processing-page">
 
     <div class="navigation">
-        <button class="navigation__button processing-page__button-save navigation__button_purple">
+        <button class="navigation__button processing-page__button-save">
             Сохранить
         </button>
-        <button class="navigation__button processing-page__button-index navigation__button_pink">
+        <button class="navigation__button processing-page__button-index">
             На главную
         </button>
         <a id="download-link" href="/download" class="processing-page__link">Cкачать файл</a>
@@ -42,6 +42,8 @@
             <p id="<%=key%>" eng="<%=mystemDescriptors.get(key).eng%>"><%=mystemDescriptors.get(key).rus%></p>
             <% } %>
         </div>
+
+        <div class="descriptors__hint">Нажмите на слово, чтобы увидеть его характеристики</div>
 
         <% for (Integer key : tokens.text.keySet()) { %>
 

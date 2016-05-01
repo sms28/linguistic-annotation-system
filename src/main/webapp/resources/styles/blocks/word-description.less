@@ -30,15 +30,21 @@
         font-family: 'Righteous', sans-serif;
 
         &-title {
-            padding: 10px 20px;
-            border-bottom: 1px solid #bebbbc;
+            height: 9%;
+            line-height: 40px;
+            padding: 0 20px;
             font-size: 18px;
             background-color: #101069;
             color: #fff;
 
             &-word {
                 font-weight: 700;
+                margin-right: 15px;
             }
+        }
+        
+        &-content {
+            height: 91%;
         }
 
         &-close {
@@ -56,13 +62,13 @@
     &__menu {
         display: inline-block;
         vertical-align: top;
-        width: 30%;
+        width: 29.8%;
 
         &-item {
             padding: 10px 20px;
-            border-bottom: 1px solid #ddb5fb;
+            border-bottom: 1px solid #deded5;
             font-size: 18px;
-            color: #7c7c7c;
+            color: #4c4c4c;
             cursor: pointer;
 
             &:hover {
@@ -70,7 +76,7 @@
             }
 
             &_active {
-                background-color: #f6dfff;
+                background-color: #ecedff;
                 color: #000;
                 cursor: auto;
             }
@@ -81,10 +87,11 @@
         display: inline-block;
         vertical-align: top;
         width: 70%;
-        height: 421px;
+        height: 100%;
         font-size: 16px;
-        background-color: #f6dfff;
+        background-color: #ecedff;
         overflow: auto;
+        border-left: 1px solid #deded5;
     }
 
     &__grafan {
@@ -98,7 +105,7 @@
 
         &-item {
             padding: 10px;
-            border-bottom: 1px solid rgba(100, 100, 100, 0.3);
+            border-bottom: 1px dashed rgba(100, 100, 100, 0.3);
 
             &-title {
                 display: inline-block;
@@ -137,8 +144,8 @@
 
             &-block {
                 margin: 30px 0;
-                border-top: 1px solid rgba(100, 100, 100, 0.3);
-                border-bottom: 1px solid rgba(100, 100, 100, 0.3);
+                border-top: 1px dashed rgba(100, 100, 100, 0.3);
+                border-bottom: 1px dashed rgba(100, 100, 100, 0.3);
             }
 
             &-text {
@@ -179,7 +186,7 @@
 
         &-item {
             padding: 10px;
-            border-bottom: 1px solid rgba(100, 100, 100, 0.3);
+            border-bottom: 1px dashed rgba(100, 100, 100, 0.3);
 
             &-title {
                 display: inline-block;

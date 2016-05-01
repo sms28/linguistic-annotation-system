@@ -1,19 +1,28 @@
 /* Styles of descriptors */
 .descriptors {
     padding: 70px;
+    line-height: 30px;
+
+    &__hint {
+        margin: 20px 0 50px;
+        font-size: 20px;
+        font-family: Tahoma, Arial, sans-serif;
+        font-weight: 700;
+        color: #999999;
+    }
 
     &__word {
-        line-height: 30px;
-        font-size: 18px;
+        font-size: 20px;
+        line-height: 40px;
         font-family: 'Righteous', sans-serif;
         cursor: pointer;
-        padding: 7px 14px;
+        background-color: rgba(200, 200, 200, 0.5);
+        padding: 6px 20px;
         margin-right: 10px;
-        border: 1px dashed #cc0000;
         border-radius: 4px;
 
         &:hover {
-            border-color: #e80000;
+            background-color: rgb(248, 246, 105);
         }
     }
 }

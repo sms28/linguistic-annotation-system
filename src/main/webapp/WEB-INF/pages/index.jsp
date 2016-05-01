@@ -4,7 +4,9 @@
         <link href='https://fonts.googleapis.com/css?family=Righteous&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" type="text/css" href="/resources/styles/main.css"/>
 
-        <script src="../../resources/libs/jquery.js" defer></script>
+        <script src="../../resources/libs/jquery.js"></script>
+        <script src="../../resources/libs/select2.full.min.js"></script>
+        <script src="../../resources/scripts/select.js"></script>
     </head>
     <body>
         <header class="header">
@@ -21,18 +23,20 @@
                 <p>Кафедра алгоритмических языков</p>
             </div>
             <div class="content__form">
-                Введите текст:
+                <div class="content__subtitle">Введите текст:</div>
                 <form name="inputText" method="post" action="/text-processing.html">
                     <textarea name="inputText" rows="15" class="content__textarea"></textarea>
-                    <select name="annotationType" required size="10" class="content__select">
-                        <option value="hand">Разметка вручную</option>
-                        <option value="grafan" selected>Графематическая разметка (модуль GrafAn)</option>
+                    <div class="content__subtitle">Выберите тип разметки:</div>
+                    <select name="annotationType" class="content__select jsSelect">
+                        <option value="hand" selected>Разметка вручную</option>
+                        <option value="grafan">Графематическая разметка (модуль GrafAn)</option>
                         <option value="mystem">Морфологическая разметка (модуль Mystem)</option>
                         <option value="grafan&mystem">Графематическая и морфологическая разметки (GrafAn, Mystem)</option>
                         <option value="grafan&term">Графематическая и терминологическая разметки (GrafAn, LSPL Tools Patterns)</option>
                         <option value="grafan&term&mystem">Графематическая, терминологическая и морфологическая разметки (GrafAn, LSPL Tools Patterns, Mystem)</option>
                     </select>
-                    <input type="submit" class="content__submit">
+                    <br>
+                    <input type="submit" class="content__submit" value="начать разметку">
                 </form>
             </div>
         </div>
