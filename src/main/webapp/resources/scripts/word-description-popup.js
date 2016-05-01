@@ -338,6 +338,23 @@ $(function() {
         lemmaBlock.remove();
     }
 
+    function deleteTermCharacteristic() {
+        var $this = $(this),
+            $item = $this.closest("." + classes.termItem);
+        $currentWord.removeAttr($item.attr("type"));
+        $this.remove();
+        $item.append('<div class="word-description__term-add word-description__link">добавить характеристику</div>');
+        $item.find("." + classes.addTermButton).on("click", addTermCharacteristic);
+    }
+
+    function addTermCharacteristic() {
+        var $this = $(this),
+            $item = $this.closest("." + classes.termItem);
+        $currentWord.attr($item.attr("type"), "");
+        $this.remove();
+        $item.append('<div class="word-description__term-delete word-description__link">удалить характеристику</div>');
+        $item.find("." + classes.deleteTermButton).on("click", deleteTermCharacteristic);
+    }
 
     function bindEvents() {
         $word.on("click", showPopup);

@@ -128,7 +128,6 @@
 <script src="../../resources/libs/jquery.js" defer></script>
 <script src="../../resources/scripts/text-processing.js" defer></script>
 <script src="../../resources/scripts/result-save.js" defer></script>
-<script src="../../resources/scripts/popup/termData.js" defer></script>
 <script src="../../resources/scripts/word-description-popup.js" defer></script>
 
 
