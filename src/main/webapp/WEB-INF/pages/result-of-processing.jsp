@@ -8,10 +8,6 @@
 <html>
 <head>
     <link rel="stylesheet" href="../../resources/styles/main.css"/>
-    <script src="../../resources/libs/jquery.js" defer></script>
-    <script src="../../resources/scripts/text-processing.js" defer></script>
-    <script src="../../resources/scripts/result-save.js" defer></script>
-    <script src="../../resources/scripts/word-description-popup.js" defer></script>
 </head>
 <body>
 <div class="processing-page">
@@ -50,13 +46,38 @@
         <% for (Integer key : tokens.text.keySet()) { %>
 
             <span class="descriptors__word" id="<%=key%>"
-                grafan="<%=tokens.text.get(key).grafematicData.toString().replace("[", "").replace("]", "").replace(", ", "|").replace("?", "Q") + "|"%>"
+                grafan="<%=tokens.text.get(key).grafematicData.toString()
+                        .replace("[", "")
+                        .replace("]", "")
+                        .replace(", ", "|")
+                        .replace("?", "Q") + "|"%>"
                 mystem="<%
                     String mystem = "";
                     for(MystemLemma lemma: tokens.text.get(key).morphologicalData) {
                         mystem += lemma.lemma + ":";
-                        mystem += lemma.properties.toString().replace("[", "").replace("]", "").replace(", ", ",") + ",|";
-                    }%><%=mystem%>"><%=tokens.text.get(key).word%></span>
+                        mystem += lemma.properties.toString()
+                        .replace(" ", "")
+                        .replace("[", "")
+                        .replace(",]", "")
+                        .replace("]", "")
+                        + ",|";
+                    }%><%=mystem%>"
+                <%
+                    String termCharacteristic = "";
+                    for (String termDescriptor : tokens.text.get(key).termData) {
+                        if (termDescriptor.equals("TERM_BEGIN")) {
+                            termCharacteristic += "term-begin";
+                        }
+                        if (termDescriptor.equals("TERM_END")) {
+                            termCharacteristic += " term-end";
+                        }
+                    }
+                %><%=termCharacteristic%>
+
+                    ><%=tokens.text.get(key).word%>
+
+            </span>
+
         <% } %>
     </div>
 
@@ -70,17 +91,19 @@
             <div class="word-description__popup">
                 <div class="word-description__popup-title">
                     <span class="word-description__popup-title-word">Слово: </span>
-                    <span class="word-description__popup-title-lemma">Лемма</span>
+                    <span class="word-description__popup-title-lemma"></span>
                     <div class="word-description__popup-close"></div>
                 </div>
                 <div class="word-description__popup-content">
                     <div class="word-description__menu">
                         <div class="word-description__menu-item word-description__menu-item_active" type="grafan">Графематическая разметка</div>
                         <div class="word-description__menu-item" type="mystem">Морфологическая разметка</div>
+                        <div class="word-description__menu-item" type="term">Терминологическая разметка</div>
                     </div>
                     <div class="word-description__content">
                         <div class="word-description__grafan"></div>
                         <div class="word-description__mystem"></div>
+                        <div class="word-description__term"></div>
                     </div>
                 </div>
             </div>
@@ -100,5 +123,14 @@
     </div>
 
 </div>
+
+
+<script src="../../resources/libs/jquery.js" defer></script>
+<script src="../../resources/scripts/text-processing.js" defer></script>
+<script src="../../resources/scripts/result-save.js" defer></script>
+<script src="../../resources/scripts/popup/termData.js" defer></script>
+<script src="../../resources/scripts/word-description-popup.js" defer></script>
+
+
 </body>
 </html>

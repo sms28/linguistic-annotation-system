@@ -1,6 +1,7 @@
 package las.service;
 
 import las.service.Grafematic.GrafematicWordDescription;
+import las.service.LSPLPatterns.LSPLPatternsWordDescription;
 import las.service.Mystem.MystemWordDescription;
 import las.service.Mystem.MystemLemma;
 
@@ -12,7 +13,9 @@ public class TextCharacteristics {
     public HashMap<Integer, WordCharacteristics> text;
 
 
-    public TextCharacteristics(ArrayList<GrafematicWordDescription> textGrafematic, ArrayList<MystemWordDescription> textMorphological) {
+    public TextCharacteristics(ArrayList<GrafematicWordDescription> textGrafematic,
+                               ArrayList<MystemWordDescription> textMorphological,
+                               ArrayList<LSPLPatternsWordDescription> textLSPL) {
         text = new HashMap<Integer, WordCharacteristics>();
 
         int key = 0;
@@ -30,7 +33,8 @@ public class TextCharacteristics {
                          new WordCharacteristics
                              (textGrafematic.get(gIndex).word,
                               textGrafematic.get(gIndex).properties,
-                              new ArrayList<MystemLemma>())
+                              new ArrayList<MystemLemma>(),
+                              textLSPL.get(gIndex).properties)
                          );
 
                 ++gIndex;
@@ -42,7 +46,8 @@ public class TextCharacteristics {
                         new WordCharacteristics
                                 (mWord,
                                  new ArrayList<String>(),
-                                 textMorphological.get(mIndex).lemmas)
+                                 textMorphological.get(mIndex).lemmas,
+                                 new ArrayList<String>())
                         );
             } else {
                 // Добавление в результирующий список слова со всеми обработками
@@ -50,7 +55,8 @@ public class TextCharacteristics {
                         new WordCharacteristics
                                 (mWord,
                                  textGrafematic.get(gIndex).properties,
-                                 textMorphological.get(mIndex).lemmas)
+                                 textMorphological.get(mIndex).lemmas,
+                                 textLSPL.get(gIndex).properties)
                 );
                 ++gIndex;
             }
@@ -62,7 +68,8 @@ public class TextCharacteristics {
                     new WordCharacteristics
                             (textGrafematic.get(gIndex).word,
                              textGrafematic.get(gIndex).properties,
-                             new ArrayList<MystemLemma>())
+                             new ArrayList<MystemLemma>(),
+                             textLSPL.get(gIndex).properties)
             );
 
             ++gIndex;

@@ -8,11 +8,16 @@ public class WordCharacteristics {
     public String word;
     public ArrayList<String> grafematicData;
     public ArrayList<MystemLemma> morphologicalData;
+    public ArrayList<String> termData;
 
-    public WordCharacteristics(String word, ArrayList<String> grafematicData, ArrayList<MystemLemma> morphologicalData)
+    public WordCharacteristics(String word,
+                               ArrayList<String> grafematicData,
+                               ArrayList<MystemLemma> morphologicalData,
+                               ArrayList<String> termData)
     {
         this.word = word;
         this.grafematicData = grafematicData;
         this.morphologicalData = morphologicalData;
+        this.termData = termData;
     }
 }

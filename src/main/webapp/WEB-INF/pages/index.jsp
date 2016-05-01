@@ -25,10 +25,12 @@
                 <form name="inputText" method="post" action="/text-processing.html">
                     <textarea name="inputText" rows="15" class="content__textarea"></textarea>
                     <select name="annotationType" required size="10" class="content__select">
-                        <option value="grafan" selected>GrafAn</option>
-                        <option value="mystem">Mystem</option>
-                        <option value="mystem&grafan">GrafAn + Mystem</option>
-                        <option value="term&grafan">Term + GrafAn</option>
+                        <option value="hand">Разметка вручную</option>
+                        <option value="grafan" selected>Графематическая разметка (модуль GrafAn)</option>
+                        <option value="mystem">Морфологическая разметка (модуль Mystem)</option>
+                        <option value="grafan&mystem">Графематическая и морфологическая разметки (GrafAn, Mystem)</option>
+                        <option value="grafan&term">Графематическая и терминологическая разметки (GrafAn, LSPL Tools Patterns)</option>
+                        <option value="grafan&term&mystem">Графематическая, терминологическая и морфологическая разметки (GrafAn, LSPL Tools Patterns, Mystem)</option>
                     </select>
                     <input type="submit" class="content__submit">
                 </form>

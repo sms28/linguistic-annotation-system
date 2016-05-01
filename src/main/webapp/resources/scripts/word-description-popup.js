@@ -3,7 +3,9 @@ $(function() {
     var classes = {
         word: "descriptors__word",
         popupActive: "word-description_active",
-        popupLemma: "word-description-popup__title-lemma",
+        popupLemma: "word-description__popup-title-lemma",
+        termBlock: "word-description__term",
+        termItem: "word-description__term-item",
         grafanBlock: "word-description__grafan",
         grafanItem: "word-description__grafan-item",
         mystemBlock: "word-description__mystem",
@@ -12,8 +14,10 @@ $(function() {
         menuItemActive: "word-description__menu-item_active",
         deleteGrafanButton: "word-description__grafan-delete",
         deleteMystemButton: "word-description__mystem-delete",
+        deleteTermButton: "word-description__term-delete",
         addGrafanButton: "word-description__grafan-add",
         addMystemButton: "word-description__mystem-add",
+        addTermButton: "word-description__term-add",
         closeButton: "word-description__popup-close",
         additionalPopup: "additional-descriptors-popup",
         additionalPopupItem: "additional-descriptors-popup__item",
@@ -38,13 +42,16 @@ $(function() {
         $mystemTerms,
         $popup,
         $popupLemma,
+        $termBlock,
         $grafanBlock,
         $mystemBlock,
         $menuItem,
         $grafanDeleteButton,
         $mystemDeleteButton,
+        $termDeleteButton,
         $addGrafanButton,
         $addMystemButton,
+        $addTermButton,
         $currentWord,
         $closeButton,
         $additionalPopup,
@@ -61,6 +68,7 @@ $(function() {
         $mystemTerms = $("#" + id.mystemTerms);
         $popup = $("#" + id.popup);
         $popupLemma = $popup.find("." + classes.popupLemma);
+        $termBlock = $popup.find("." + classes.termBlock);
         $grafanBlock = $popup.find("." + classes.grafanBlock);
         $mystemBlock = $popup.find("." + classes.mystemBlock);
         $closeButton = $popup.find("." + classes.closeButton);
@@ -146,6 +154,31 @@ $(function() {
         return resultMarkup;
     }
 
+    function termItemMarkup(title, hasCharacteristic, type) {
+        var resultMarkup = '';
+        resultMarkup += '<div class="word-description__term-item" type="'+ type +'">' +
+            '<div class="word-description__term-item-title">' +
+            title +
+            '</div>';
+        if (hasCharacteristic) {
+            resultMarkup += '<div class="word-description__term-delete word-description__link">удалить характеристику</div></div>';
+        } else {
+            resultMarkup += '<div class="word-description__term-add word-description__link">добавить характеристику</div></div>';
+        }
+        return resultMarkup;
+    }
+
+    function termMarkup(isTermBegin, isTermEnd) {
+        var resultMarkup = '<div class="word-description__term-title">Характеристики слова:</div>';
+
+        resultMarkup += termItemMarkup('Начало термина', isTermBegin, 'term-begin') +
+                        termItemMarkup('Конец термина', isTermEnd, 'term-end');
+
+
+
+        return resultMarkup;
+    }
+
     function updateGrafanDataPopup() {
         $grafanBlock.html(grafanMarkup($currentWord.attr("grafan")));
         $grafanDeleteButton = $popup.find("." + classes.deleteGrafanButton);
@@ -162,12 +195,21 @@ $(function() {
         $addMystemButton.on("click", showAdditionalMystemDescriptorsPopup);
     }
 
+    function updateTermDataPopup() {
+        $termBlock.html(termMarkup($currentWord[0].hasAttribute("term-begin"), $currentWord[0].hasAttribute("term-end")));
+        $termDeleteButton = $popup.find("." + classes.deleteTermButton);
+        $termDeleteButton.on("click", deleteTermCharacteristic);
+        $addTermButton = $popup.find("." + classes.addTermButton);
+        $addTermButton.on("click", addTermCharacteristic);
+    }
+
     function showPopup() {
         var $this = $(this);
         $currentWord = $this;
         $popupLemma.html($this.html());
         updateGrafanDataPopup();
         updateMystemDataPopup();
+        updateTermDataPopup();
         $popup.addClass(classes.popupActive);
     }
 
@@ -295,6 +337,7 @@ $(function() {
 
         lemmaBlock.remove();
     }
+
 
     function bindEvents() {
         $word.on("click", showPopup);

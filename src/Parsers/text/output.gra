@@ -11,13 +11,9 @@
 здесь                           54 5 RLE aa
 ,                               59 1 PUN
 он                              61 2 RLE aa
-ББ                              63 2 DEL SPC
-все                             65 3 RLE aa
-ББ                              68 2 DEL SPC
-ждал                            70 4 RLE aa
-ББ                              74 2 DEL SPC
-чего-нибудь                     76 11 RLE aa
-ББ                              87 2 DEL SPC
-особенно                        89 8 RLE aa
-умного                          98 6 RLE aa
-.                               104 1 PUN CS? SENT_END
+все                             64 3 RLE aa
+ждал                            68 4 RLE aa
+чего-нибудь                     73 11 RLE aa
+особенно                        85 8 RLE aa
+умного                          94 6 RLE aa
+.                               100 1 PUN CS? SENT_END

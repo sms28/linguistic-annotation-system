@@ -168,12 +168,43 @@
         }
     }
 
+    &__term {
+        display: none;
+
+        &-title {
+            margin: 10px;
+            font-weight: 700;
+            font-size: 20px;
+        }
+
+        &-item {
+            padding: 10px;
+            border-bottom: 1px solid rgba(100, 100, 100, 0.3);
+
+            &-title {
+                display: inline-block;
+                vertical-align: top;
+                margin-right: 10px;
+                font-size: 17px;
+            }
+        }
+
+        &-delete, &-add {
+            display: inline-block;
+            vertical-align: top;
+        }
+    }
+
 
     &[activeblock="grafan"] &__grafan {
         display: block;
     }
 
     &[activeblock="mystem"] &__mystem {
+        display: block;
+    }
+
+    &[activeblock="term"] &__term {
         display: block;
     }
 

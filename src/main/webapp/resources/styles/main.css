@@ -468,10 +468,36 @@ body {
 .word-description__mystem-add {
   margin: 20px 10px 10px;
 }
+.word-description__term {
+  display: none;
+}
+.word-description__term-title {
+  margin: 10px;
+  font-weight: 700;
+  font-size: 20px;
+}
+.word-description__term-item {
+  padding: 10px;
+  border-bottom: 1px solid rgba(100, 100, 100, 0.3);
+}
+.word-description__term-item-title {
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 10px;
+  font-size: 17px;
+}
+.word-description__term-delete,
+.word-description__term-add {
+  display: inline-block;
+  vertical-align: top;
+}
 .word-description[activeblock="grafan"] .word-description__grafan {
   display: block;
 }
 .word-description[activeblock="mystem"] .word-description__mystem {
+  display: block;
+}
+.word-description[activeblock="term"] .word-description__term {
   display: block;
 }
 .word-description__link {

@@ -44,35 +44,38 @@ public class TextProcessingController {
 
 
         TextCharacteristics tokens = null;
+        ArrayList<GrafematicWordDescription> grafanData = new ArrayList<GrafematicWordDescription>();
+        ArrayList<MystemWordDescription> mystemData = new ArrayList<MystemWordDescription>();
+        ArrayList<LSPLPatternsWordDescription> termData = new ArrayList<LSPLPatternsWordDescription>();
 
 
-        // Только графематическая разметка
-        if (select.equals("grafan")) {
-            GrafematicParser parser = new GrafematicParser();
-            tokens = new TextCharacteristics(parser.parse(text), new ArrayList<MystemWordDescription>());
+        // Графематическая разметка
+        if (select.equals("grafan") ||
+            select.equals("grafan&mystem") ||
+            select.equals("grafan&term") ||
+            select.equals("grafan&term&mystem")) {
+                GrafematicParser parser = new GrafematicParser();
+                grafanData = parser.parse(text);
         }
 
-        // Только морфологическая разметка
-        if (select.equals("mystem")) {
-            MystemParser parser = new MystemParser();
-            tokens = new TextCharacteristics(new ArrayList<GrafematicWordDescription>(), parser.parse(text));
+
+        // Морфологическая разметка
+        if (select.equals("mystem") ||
+            select.equals("grafan&mystem") ||
+            select.equals("grafan&term&mystem")) {
+                MystemParser parser = new MystemParser();
+                mystemData = parser.parse(text);
         }
 
-        // Морфологическая и графематическая разметка
-        if (select.equals("mystem&grafan")) {
-            GrafematicParser gParser = new GrafematicParser();
-            MystemParser mParser = new MystemParser();
-            tokens = new TextCharacteristics(gParser.parse(text), mParser.parse(text));
-        }
 
         // Терминологическая разметка
-        if (select.equals("term&grafan")) {
-            GrafematicParser gParser = new GrafematicParser();
-            LSPLPatternsParser lParser = new LSPLPatternsParser();
-            ArrayList<GrafematicWordDescription> grafanData = gParser.parse(text);
-            ArrayList<LSPLPatternsWordDescription> ksdjcsdhjds = lParser.parse(text, grafanData);
-            tokens = new TextCharacteristics(grafanData, new ArrayList<MystemWordDescription>());
+        if (select.equals("grafan&term") ||
+            select.equals("grafan&term&mystem")) {
+                LSPLPatternsParser parser = new LSPLPatternsParser();
+                termData = parser.parse(text, grafanData);
         }
+
+        tokens = new TextCharacteristics(grafanData, mystemData, termData);
 
         model.addAttribute("tokens", tokens);
 
