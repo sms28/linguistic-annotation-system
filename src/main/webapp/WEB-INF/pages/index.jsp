@@ -14,7 +14,7 @@
             <h1 class="header__title">Linguistic annotation system</h1>
         </header>
         <div class="navigation">
-            <button class="navigation__button navigation__button_purple">HELP</button>
+            <button class="navigation__button navigation__button_purple">помощь</button>
         </div>
         <div class="content">
             <div class="university-title">

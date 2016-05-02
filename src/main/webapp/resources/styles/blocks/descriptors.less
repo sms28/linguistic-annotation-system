@@ -12,6 +12,7 @@
     }
 
     &__word {
+        position: relative;
         font-size: 20px;
         line-height: 40px;
         font-family: 'Righteous', sans-serif;
@@ -23,6 +24,32 @@
 
         &:hover {
             background-color: rgb(248, 246, 105);
+        }
+
+        &[term-begin] {
+            margin-left: 10px;
+
+            &:before {
+                content: "[";
+                position: absolute;
+                top: -6px;
+                left: -16px;
+                font-size: 46px;
+                color: #b131ff;
+            }
+        }
+
+        &[term-end] {
+            margin-right: 20px;
+
+            &:after {
+                content: "]";
+                position: absolute;
+                top: -6px;
+                right: -16px;
+                font-size: 46px;
+                color: #b131ff;
+            }
         }
     }
 }

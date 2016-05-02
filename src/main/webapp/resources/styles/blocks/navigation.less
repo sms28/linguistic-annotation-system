@@ -20,6 +20,7 @@
         color: rgba(255, 255, 255, 1);
         background-color: #42c6b1;
         cursor: pointer;
+        box-shadow: -0 0 14px 0 rgba(100,100,100,0.5);
 
         & + & {
             margin-left: 15px;
@@ -32,5 +33,22 @@
         &:hover {
             background-color: #4addc6;
         }
+    }
+
+
+    &__fix-names-button {
+        display: inline-block;
+        vertical-align: top;
+        padding: 0 10px;
+        margin: 9px 15px;
+        font-size: 15px;
+        line-height: 30px;
+        font-family: Tahoma, Arial, sans-serif;
+        text-transform: uppercase;
+        font-weight: 700;
+        color: #1c5249;
+        cursor: pointer;
+        border: 3px solid #42c6b1;
+        border-radius: 3px;
     }
 }
