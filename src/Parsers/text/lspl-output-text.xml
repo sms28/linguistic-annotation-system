@@ -2,12 +2,23 @@
 <texts>
 	<text>
 		<goal name="AT">
-			<match startPos="21" endPos="42">
-				<fragment>ХГЪЫМШЕ БШПЮФЕМХЪ КХЖ</fragment>
-				<result>кхж бшпюфемхъ хгъымше</result>
-				<result>кхж бшпюфемхъ хгъымше</result>
-				<result>кхж бшпюфемхъ хгъымше</result>
-				<result>кхж бшпюфемхъ хгъымше</result>
+			<match startPos="194" endPos="221">
+				<fragment>уХЛХВЕЯЙХЕ ЯБНИЯРБЮ АЕМГНКЮ</fragment>
+				<result>аемгнкю ябниярбю ухлхвеяйхе</result>
+				<result>аемгнкю ябниярбю ухлхвеяйхе</result>
+				<result>аемгнкю ябниярбю ухлхвеяйхе</result>
+				<result>аемгнкю ябниярбю ухлхвеяйхе</result>
+			</match>
+			<match startPos="303" endPos="339">
+				<fragment>ЦЕНЛЕРПХВЕЯЙНИ ТХЦСПШ ЬЕЯРХСЦНКЭМХЙЮ</fragment>
+				<result>ьеярхсцнкэмхйю тхцспш ценлерпхвеяйни</result>
+			</match>
+			<match startPos="582" endPos="610">
+				<fragment>УЮПЮЙРЕПМШ ПЕЮЙЖХХ ГЮЛЕЫЕМХЪ</fragment>
+				<result>гюлеыемхъ пеюйжхх уюпюйрепмш</result>
+				<result>гюлеыемхъ пеюйжхх уюпюйрепмш</result>
+				<result>гюлеыемхъ пеюйжхх уюпюйрепмш</result>
+				<result>гюлеыемхъ пеюйжхх уюпюйрепмш</result>
 			</match>
 		</goal>
 	</text>

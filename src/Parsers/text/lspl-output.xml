@@ -2,11 +2,20 @@
 <texts>
 	<text>
 		<goal name="ATT">
-			<match startPos="21" endPos="42">
-				<fragment>изящные выражения лиц</fragment>
+			<match startPos="194" endPos="221">
+				<fragment>Химические свойства бензола</fragment>
 			</match>
-			<match startPos="21" endPos="42">
-				<fragment>изящные выражения лиц</fragment>
+			<match startPos="194" endPos="221">
+				<fragment>Химические свойства бензола</fragment>
+			</match>
+			<match startPos="303" endPos="339">
+				<fragment>геометрической фигуры шестиугольника</fragment>
+			</match>
+			<match startPos="582" endPos="610">
+				<fragment>характерны реакции замещения</fragment>
+			</match>
+			<match startPos="582" endPos="610">
+				<fragment>характерны реакции замещения</fragment>
 			</match>
 		</goal>
 	</text>

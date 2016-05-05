@@ -1,19 +1,101 @@
                                 0 0 BEG DOC
-Глядя                           0 5 RLE Aa NAM?
-на                              6 2 RLE aa EXPR1 EXPR2 EXPR_NO277
-уверенные                       9 9 RLE aa
-и                               19 1 RLE aa EXPR1 EXPR2 EXPR_NO225
-изящные                         21 7 RLE aa
-выражения                       29 9 RLE aa
-лиц                             39 3 RLE aa
-,                               42 1 PUN
-собранных                       44 9 RLE aa
-здесь                           54 5 RLE aa
-,                               59 1 PUN
-он                              61 2 RLE aa
-все                             64 3 RLE aa
-ждал                            68 4 RLE aa
-чего-нибудь                     73 11 RLE aa
-особенно                        85 8 RLE aa
-умного                          94 6 RLE aa
-.                               100 1 PUN CS? SENT_END
+В                               0 1 RLE AA EXPR1 EXPR2 EXPR_NO16
+лекции                          2 6 RLE aa
+о                               9 1 RLE aa EXPR1 EXPR2 EXPR_NO330
+бензоле                         11 7 RLE aa
+мы                              19 2 RLE aa
+рассмотрели                     22 11 RLE aa
+строение                        34 8 RLE aa
+молекулы                        43 8 RLE aa
+и                               52 1 RLE aa EXPR1 EXPR2 EXPR_NO225
+определили                      54 10 RLE aa
+,                               64 1 PUN
+что                             66 3 RLE aa EXPR1 EXPR2 EXPR_NO510
+бензольное                      70 10 RLE aa
+кольцо                          81 6 RLE aa
+—                               88 1 PUN
+уникальная                      90 10 RLE aa
+система                         101 7 RLE aa
+.                               108 1 PUN SENT_END
+И                               110 1 RLE AA EXPR1 EXPR2 EXPR_NO225
+у                               112 1 RLE aa EXPR1 EXPR2 EXPR_NO501
+этой                            114 4 RLE aa
+системы                         119 7 RLE aa
+свои                            127 4 RLE aa
+характеристики                  132 14 RLE aa
+,                               146 1 PUN
+отличающиеся                    148 12 RLE aa
+от                              161 2 RLE aa EXPR1 EXPR2 EXPR_NO336
+свойств                         164 7 RLE aa
+других                          172 6 RLE aa
+углеводородов                   179 13 RLE aa
+.                               192 1 PUN SENT_END
+Химические                      194 10 RLE Aa NAM?
+свойства                        205 8 RLE aa
+бензола                         214 7 RLE aa
+.                               221 1 PUN SENT_END
+Первая                          223 6 RLE Aa NAM?
+такая                           230 5 RLE aa
+характеристика                  236 14 RLE aa
+—                               251 1 PUN
+прочность                       253 9 RLE aa
+бензольного                     263 11 RLE aa
+кольца                          275 6 RLE aa
+.                               281 1 PUN SENT_END
+Прочность                       283 9 RLE Aa NAM?
+не                              293 2 RLE aa EXPR1 EXPR2 EXPR_NO324
+просто                          296 6 RLE aa
+геометрической                  303 14 RLE aa
+фигуры                          318 6 RLE aa
+шестиугольника                  325 14 RLE aa
+,                               339 1 PUN
+а                               341 1 RLE aa EXPR1 EXPR_NO4
+именно                          343 6 RLE aa EXPR2
+системы                         350 7 RLE aa
+связей                          358 6 RLE aa
+и                               365 1 RLE aa EXPR1 EXPR2 EXPR_NO225
+делокализованного               367 17 RLE aa
+электронного                    385 12 RLE aa
+облака                          398 6 RLE aa
+.                               404 1 PUN SENT_END
+Что                             406 3 RLE Aa NAM? EXPR1 EXPR2 EXPR_NO510
+это                             410 3 RLE aa
+означает                        414 8 RLE aa
+?                               422 1 PUN SENT_END
+Это                             424 3 RLE Aa NAM?
+означает                        428 8 RLE aa
+,                               436 1 PUN
+что                             438 3 RLE aa EXPR1 EXPR2 EXPR_NO510
+разрушить                       442 9 RLE aa
+эту                             452 3 RLE aa
+систему                         456 7 RLE aa
+(                               464 1 PUN OPN
+раскрыть                        465 8 RLE aa
+кольцо                          474 6 RLE aa
+)                               480 1 PUN CLS
+возможно                        482 8 RLE aa EXPR1 EXPR2 EXPR_NO275
+при                             491 3 RLE aa EXPR1 EXPR2 EXPR_NO410
+специальных                     495 11 RLE aa
+условиях                        507 8 RLE aa
+—                               516 1 PUN
+давление                        518 8 RLE aa
+,                               526 1 PUN
+температура                     528 11 RLE aa
+,                               539 1 PUN
+катализатор                     541 11 RLE aa
+.                               552 1 PUN SENT_END
+Для                             554 3 RLE Aa NAM? EXPR1 EXPR2 EXPR_NO197
+бензола                         558 7 RLE aa
+и                               566 1 RLE aa EXPR1 EXPR2 EXPR_NO225
+его                             568 3 RLE aa
+гомологов                       572 9 RLE aa
+характерны                      582 10 RLE aa
+реакции                         593 7 RLE aa
+замещения                       601 9 RLE aa
+.                               610 1 PUN SENT_END
+Остальные                       612 9 RLE Aa NAM?
+реакции                         622 7 RLE aa
+идут                            630 4 RLE aa
+с                               635 1 RLE aa EXPR1 EXPR_NO450
+трудом                          637 6 RLE aa EXPR2
+.                               643 1 PUN CS? SENT_END

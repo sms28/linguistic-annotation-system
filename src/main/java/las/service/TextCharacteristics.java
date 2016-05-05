@@ -6,17 +6,17 @@ import las.service.Mystem.MystemWordDescription;
 import las.service.Mystem.MystemLemma;
 
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 
 public class TextCharacteristics {
 
-    public HashMap<Integer, WordCharacteristics> text;
+    public LinkedHashMap<Integer, WordCharacteristics> text;
 
 
     public TextCharacteristics(ArrayList<GrafematicWordDescription> textGrafematic,
                                ArrayList<MystemWordDescription> textMorphological,
                                ArrayList<LSPLPatternsWordDescription> textLSPL) {
-        text = new HashMap<Integer, WordCharacteristics>();
+        text = new LinkedHashMap<Integer, WordCharacteristics>();
 
         int key = 0;
 

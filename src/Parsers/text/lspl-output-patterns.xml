@@ -2,19 +2,39 @@
 <texts>
 	<text>
 		<goal name="AP">
-			<match startPos="21" endPos="42">
-				<fragment>изящные выражения лиц</fragment>
+			<match startPos="194" endPos="221">
+				<fragment>Химические свойства бензола</fragment>
 				<result><![CDATA[GP-E = A<c=nom, n=plur, g=un, doc=un, t=un, a=anim, f=un, m=un, p=un, r=un>]]></result>
 				<result><![CDATA[GP-F = A<c=nom, n=plur, g=un, doc=un, t=un, a=anim, f=un, m=un, p=un, r=un>]]></result>
 				<result><![CDATA[GP-G = A<c=acc, n=plur, g=un, doc=un, t=un, a=inan, f=un, m=un, p=un, r=un>]]></result>
 				<result><![CDATA[GP-H = A<c=acc, n=plur, g=un, doc=un, t=un, a=inan, f=un, m=un, p=un, r=un>]]></result>
 			</match>
+			<match startPos="303" endPos="339">
+				<fragment>геометрической фигуры шестиугольника</fragment>
+				<result><![CDATA[GP-I = A<c=gen, n=sing, g=fem, doc=un, t=un, a=anim, f=un, m=un, p=un, r=un>]]></result>
+			</match>
+			<match startPos="582" endPos="610">
+				<fragment>характерны реакции замещения</fragment>
+				<result><![CDATA[GP-J = A<c=un, n=plur, g=un, doc=un, t=un, a=anim, f=un, m=un, p=un, r=un>]]></result>
+				<result><![CDATA[GP-BA = A<c=un, n=plur, g=un, doc=un, t=un, a=anim, f=un, m=un, p=un, r=un>]]></result>
+				<result><![CDATA[GP-BB = A<c=un, n=plur, g=un, doc=un, t=un, a=anim, f=un, m=un, p=un, r=un>]]></result>
+				<result><![CDATA[GP-BC = A<c=un, n=plur, g=un, doc=un, t=un, a=anim, f=un, m=un, p=un, r=un>]]></result>
+			</match>
 		</goal>
 		<goal name="APT">
-			<match startPos="21" endPos="42">
-				<fragment>изящные выражения лиц</fragment>
-				<result><![CDATA[GP-I = N<c=nom, n=plur, g=neut>]]></result>
-				<result><![CDATA[GP-J = N<c=acc, n=plur, g=neut>]]></result>
+			<match startPos="194" endPos="221">
+				<fragment>Химические свойства бензола</fragment>
+				<result><![CDATA[GP-BD = N<c=nom, n=plur, g=neut>]]></result>
+				<result><![CDATA[GP-BE = N<c=acc, n=plur, g=neut>]]></result>
+			</match>
+			<match startPos="303" endPos="339">
+				<fragment>геометрической фигуры шестиугольника</fragment>
+				<result><![CDATA[GP-BF = N<c=gen, n=sing, g=fem>]]></result>
+			</match>
+			<match startPos="582" endPos="610">
+				<fragment>характерны реакции замещения</fragment>
+				<result><![CDATA[GP-BG = N<c=nom, n=plur, g=fem>]]></result>
+				<result><![CDATA[GP-BH = N<c=acc, n=plur, g=fem>]]></result>
 			</match>
 		</goal>
 	</text>
