@@ -18,7 +18,7 @@
                 На главную
             </button>
             <a id="download-link" href="/download" class="processing-page__link">Cкачать файл</a>
-            <div class="navigation__fix-names-button">Изменить названия дескрипторов</div>
+            <div class="navigation__fix-names-button">Изменить значения дескрипторов</div>
         </div>
 
         <div class="descriptors">
@@ -133,7 +133,7 @@
             <div class="description-names__wrap">
                 <div class="description-names__popup">
                     <div class="description-names__popup-title">
-                        <span class="description-names__popup-title-word">Названия дескрипторов</span>
+                        <span class="description-names__popup-title-word">Значения дескрипторов</span>
                         <div class="description-names__popup-close jsPopupClose"></div>
                     </div>
                     <div class="description-names__popup-content">
