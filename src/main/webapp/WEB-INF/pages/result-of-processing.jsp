@@ -18,7 +18,7 @@
                 На главную
             </button>
             <a id="download-link" href="/download" class="processing-page__link">Cкачать файл</a>
-            <div class="navigation__fix-names-button">Изменить значения дескрипторов</div>
+            <div class="navigation__fix-names-button">Изменить значения аннотаций</div>
         </div>
 
         <div class="descriptors">
@@ -42,7 +42,7 @@
                 <% } %>
             </div>
 
-            <div class="descriptors__hint">Нажмите на слово, чтобы увидеть его характеристики</div>
+            <div class="descriptors__hint">Нажмите на токен, чтобы увидеть его характеристики</div>
 
             <% for (Integer key : tokens.text.keySet()) { %>
 
@@ -91,7 +91,7 @@
             <div class="word-description__wrap">
                 <div class="word-description__popup">
                     <div class="word-description__popup-title">
-                        <span class="word-description__popup-title-word">Слово: </span>
+                        <span class="word-description__popup-title-word">Токен: </span>
                         <span class="word-description__popup-title-lemma"></span>
                         <div class="word-description__popup-close"></div>
                     </div>
@@ -133,7 +133,7 @@
             <div class="description-names__wrap">
                 <div class="description-names__popup">
                     <div class="description-names__popup-title">
-                        <span class="description-names__popup-title-word">Значения дескрипторов</span>
+                        <span class="description-names__popup-title-word">Значения аннотаций</span>
                         <div class="description-names__popup-close jsPopupClose"></div>
                     </div>
                     <div class="description-names__popup-content">

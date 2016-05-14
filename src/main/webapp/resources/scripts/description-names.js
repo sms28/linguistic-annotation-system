@@ -83,7 +83,7 @@ $(function() {
             resultMarkup += grafanTermMarkup($(grafanTermsItem.get(i)));
         }
 
-        resultMarkup += '<div class="description-names__grafan-add description-names__link">Добавить новый дескриптор</div>';
+        resultMarkup += '<div class="description-names__grafan-add description-names__link">Добавить новую аннотацию</div>';
 
         $grafanBlock.append(resultMarkup);
     }
@@ -105,7 +105,7 @@ $(function() {
                         '<input class="description-names__grafan-new-input jsNameNewLabel">' +
                         '<input class="description-names__grafan-new-input jsNameNewValue">' +
                         '</div>' +
-                        '<div class="description-names__grafan-add description-names__link">Добавить новый дескриптор</div>'
+                        '<div class="description-names__grafan-add description-names__link">Добавить новую аннотацию</div>'
         );
         $grafanBlock.find("." + classes.addGrafanTermButton).on("click", addGrafanTerm);
     }
@@ -121,7 +121,7 @@ $(function() {
             resultMarkup += mystemTermMarkup($(mystemTermsItem.get(i)));
         }
 
-        resultMarkup += '<div class="description-names__mystem-add description-names__link">Добавить новый дескриптор</div>';
+        resultMarkup += '<div class="description-names__mystem-add description-names__link">Добавить новую аннотацию</div>';
 
         $mystemBlock.append(resultMarkup);
     }
@@ -143,7 +143,7 @@ $(function() {
             '<input class="description-names__mystem-new-input jsNameNewLabel">' +
             '<input class="description-names__mystem-new-input jsNameNewValue">' +
             '</div>' +
-            '<div class="description-names__mystem-add description-names__link">Добавить новый дескриптор</div>'
+            '<div class="description-names__mystem-add description-names__link">Добавить новую аннотацию</div>'
         );
         $mystemBlock.find("." + classes.addMystemTermButton).on("click", addMystemTerm);
     }

@@ -29,11 +29,11 @@
                     <div class="content__subtitle">Выберите тип разметки:</div>
                     <select name="annotationType" class="content__select jsSelect">
                         <option value="hand" selected>Разметка вручную</option>
-                        <option value="grafan">Графематическая разметка (модуль GrafAn)</option>
-                        <option value="mystem">Морфологическая разметка (модуль Mystem)</option>
-                        <option value="grafan&mystem">Графематическая и морфологическая разметки (GrafAn, Mystem)</option>
-                        <option value="grafan&term">Графематическая и терминологическая разметки (GrafAn, LSPL Tools Patterns)</option>
-                        <option value="grafan&term&mystem">Графематическая, терминологическая и морфологическая разметки (GrafAn, LSPL Tools Patterns, Mystem)</option>
+                        <option value="grafan">Графематическая разметка</option>
+                        <option value="mystem">Морфологическая разметка</option>
+                        <option value="grafan&mystem">Графематическая и морфологическая разметки</option>
+                        <option value="grafan&term">Графематическая и терминологическая разметки</option>
+                        <option value="grafan&term&mystem">Графематическая, терминологическая и морфологическая разметки</option>
                     </select>
                     <br>
                     <input type="submit" class="content__submit" value="начать разметку">

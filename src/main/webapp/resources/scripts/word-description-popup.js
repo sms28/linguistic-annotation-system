@@ -95,7 +95,7 @@ $(function() {
     function grafanMarkup(descriptors) {
         var begin = 0,
             end = descriptors.indexOf("|"),
-            resultMarkup = '<div class="word-description__grafan-title">Характеристики слова:</div>';
+            resultMarkup = '<div class="word-description__grafan-title">Характеристики токена:</div>';
 
         while (end != -1) {
             resultMarkup += grafanItemMarkup(descriptors.substring(begin, end));
@@ -103,7 +103,7 @@ $(function() {
             end = descriptors.indexOf("|", begin);
         }
 
-        resultMarkup += '<div class="word-description__grafan-add word-description__link">Добавить новый дескриптор</div>';
+        resultMarkup += '<div class="word-description__grafan-add word-description__link">Добавить новую аннотацию</div>';
 
         return resultMarkup;
     }
@@ -161,15 +161,15 @@ $(function() {
             title +
             '</div>';
         if (hasCharacteristic) {
-            resultMarkup += '<div class="word-description__term-delete word-description__link">удалить характеристику</div></div>';
+            resultMarkup += '<div class="word-description__term-delete word-description__link">удалить аннотацию</div></div>';
         } else {
-            resultMarkup += '<div class="word-description__term-add word-description__link">добавить характеристику</div></div>';
+            resultMarkup += '<div class="word-description__term-add word-description__link">добавить аннотацию</div></div>';
         }
         return resultMarkup;
     }
 
     function termMarkup(isTermBegin, isTermEnd) {
-        var resultMarkup = '<div class="word-description__term-title">Характеристики слова:</div>';
+        var resultMarkup = '<div class="word-description__term-title">Характеристики токена:</div>';
 
         resultMarkup += termItemMarkup('Начало термина', isTermBegin, 'term-begin') +
                         termItemMarkup('Конец термина', isTermEnd, 'term-end');
@@ -215,7 +215,7 @@ $(function() {
 
     function showAdditionalGrafanDescriptorsPopup() {
         $additionalPopupSave.off("click").on("click", saveGrafanDescriptorsFromAdditionalPopup);
-        $additionalPopupTitle.html("Добавление нового дескриптора");
+        $additionalPopupTitle.html("Добавление новой аннотации");
         $additionalPopupContent.html("");
 
         var i,
@@ -343,7 +343,7 @@ $(function() {
             $item = $this.closest("." + classes.termItem);
         $currentWord.removeAttr($item.attr("type"));
         $this.remove();
-        $item.append('<div class="word-description__term-add word-description__link">добавить характеристику</div>');
+        $item.append('<div class="word-description__term-add word-description__link">добавить аннотацию</div>');
         $item.find("." + classes.addTermButton).on("click", addTermCharacteristic);
     }
 
@@ -352,7 +352,7 @@ $(function() {
             $item = $this.closest("." + classes.termItem);
         $currentWord.attr($item.attr("type"), "");
         $this.remove();
-        $item.append('<div class="word-description__term-delete word-description__link">удалить характеристику</div>');
+        $item.append('<div class="word-description__term-delete word-description__link">удалить аннотацию</div>');
         $item.find("." + classes.deleteTermButton).on("click", deleteTermCharacteristic);
     }
 
